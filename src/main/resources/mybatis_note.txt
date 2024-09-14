@@ -1,0 +1,121 @@
+
+一.mybatis 如何获取值
+
+${} 通过使用字符串拼接方式 拼接sql，若为字符串类或者是日期类型字段，需要手动加单引号。
+但是#{} 是通过占位符的方式，若为字符串类或者是日期类型字段，mybatis 会自动加单引号。
+
+创建反射三种案例
+
+
+
+二.mybatis 如何传递参数
+
+通过参数传递，mybatis 会自动将参数值替换到 sql 语句中。
+
+三.mybatis 如何执行 sql 语句
+
+mybatis 会自动加载 xml 文件，并通过反射创建 SqlSession 对象，然后调用 execute 方法执行 sql 语句。
+
+四.mybatis 如何获取结果集
+
+mybatis 会将查询结果封装成一个 map 对象，可以通过 map 的 key 值获取对应的 value 值。
+
+五.mybatis 如何分页
+
+mybatis 提供了分页插件，可以实现分页功能。
+
+六.mybatis 如何缓存查询结果
+
+mybatis 提供了缓存插件，可以缓存查询结果，提高查询效率。
+
+七.mybatis 如何使用注解
+
+mybatis 提供了注解，可以简化 xml 配置。
+
+八.mybatis 如何使用动态 SQL
+
+mybatis 提供了动态 SQL，可以灵活地编写 sql 语句。
+
+九.mybatis 如何使用 mapper
+
+mybatis 提供了 mapper 接口，可以方便地调用 sql 语句。
+
+十.mybatis 如何使用配置文件
+
+mybatis 可以通过 xml 文件或者注解来配置mybatis。
+
+十一.mybatis 如何使用日志
+
+mybatis 可以通过日志插件来记录mybatis的运行日志。
+
+十二.mybatis 如何使用事务
+
+mybatis 可以通过事务插件来实现事务。
+
+十三.mybatis 如何使用缓存
+
+mybatis 可以通过缓存插件来实现缓存。
+
+十四.mybatis 如何使用多数据源
+
+mybatis 可以通过读写分离插件来实现多数据源。
+
+十五.mybatis 如何使用代码生成器
+
+mybatis 可以通过代码生成器来生成 mapper 接口和 xml 文件。
+
+十六.mybatis 如何使用插件
+
+mybatis 可以通过插件来扩展mybatis的功能。
+
+十七.mybatis 如何使用第三方框架
+
+mybatis 可以通过第三方框架来整合mybatis。
+
+十八.mybatis 如何使用mybatis-generator
+
+mybatis 可以通过 mybatis-generator 来自动生成 mapper 接口和 xml 文件。
+
+十九.mybatis 如何使用mybatis-plus
+
+mybatis 可以通过 mybatis-plus 来简化开发。
+
+二十.mybatis 如何使用mybatis-config-file
+
+mybatis 可以通过 mybatis-config-file 来简化 xml 配置。
+
+二十一.mybatis 如何使用mybatis-spring
+
+mybatis 可以通过 mybatis-spring 来整合 spring。
+
+二十二.mybatis 如何使用mybatis-spring-boot-starter
+
+mybatis 可以通过 mybatis-spring-boot-starter 来简化 springboot 集成。
+
+二十三.mybatis 如何使用mybatis-spring-boot-autoconfigure
+
+mybatis 可以通过 mybatis-spring-boot-autoconfigure 来简化 springboot 自动配置。
+
+二十四.mybatis 如何使用mybatis-spring-boot-samples
+
+mybatis 可以通过 mybatis-spring-boot-samples 来展示 springboot 集成的示例。
+
+二十五.mybatis 如何使用mybatis-spring-boot-test
+
+mybatis 可以通过 mybatis-spring-boot-test 来测试 springboot 集成。
+
+二十六.mybatis 如何使用mybatis-spring-boot-samples-xml
+
+mybatis 可以通过 mybatis-spring-boot-samples-xml 来展示 springboot 集成 xml 配置的示例。
+
+二十七.mybatis 如何使用mybatis-spring-boot-samples-annotation
+
+mybatis 可以通过 mybatis-spring-boot-samples-annotation 来展示 springboot 集成注解配置的示例。
+
+二十八.mybatis 如何使用mybatis-spring-boot-samples-kotlin
+
+mybatis 可以通过 mybatis-spring-boot-samples-kotlin 来展示 springboot 集成 kotlin 的示例。
+
+二十九.mybatis 如何使用mybatis-spring-boot-samples-kotlin-xml
+
+

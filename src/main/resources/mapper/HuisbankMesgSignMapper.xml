@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhouzz.mapper.HuisbankMesgSignMapper">
+    <resultMap id="BaseResultMap" type="com.zhouzz.pojo.HuisbankMesgSign">
+        <result column="ID" property="id" jdbcType="NUMERIC"/>
+        <result column="CUST_NO" property="custNo" jdbcType="VARCHAR"/>
+        <result column="CUST_NAME" property="custName" jdbcType="VARCHAR"/>
+        <result column="CUST_BRCH_NO" property="custBrchNo" jdbcType="VARCHAR"/>
+        <result column="OPER_PERSON" property="operPerson" jdbcType="VARCHAR"/>
+        <result column="CUST_ACCT_NO" property="custAcctNo" jdbcType="VARCHAR"/>
+        <result column="CUST_ACCT_NAME" property="custAcctName" jdbcType="VARCHAR"/>
+        <result column="SIGN_BRCH_NO" property="signBrchNo" jdbcType="VARCHAR"/>
+        <result column="SIGN_BANK_NAME" property="signBankName" jdbcType="VARCHAR"/>
+        <result column="REMARK1" property="remark1" jdbcType="VARCHAR"/>
+        <result column="REMARK2" property="remark2" jdbcType="VARCHAR"/>
+        <result column="AUDIT_STATUS" property="auditStatus" jdbcType="CHAR"/>
+        <result column="SIGN_STATUS" property="signStatus" jdbcType="CHAR"/>
+        <result column="CREATE_TIME" property="createTime" jdbcType="NUMERIC"/>
+        <result column="UPDATE_TIME" property="updateTime" jdbcType="NUMERIC"/>
+        <result column="FLAG" property="flag" jdbcType="CHAR"/>
+        <result column="RESERVE1" property="reserve1" jdbcType="VARCHAR"/>
+        <result column="RESERVE2" property="reserve2" jdbcType="VARCHAR"/>
+        <result column="RESERVE3" property="reserve3" jdbcType="VARCHAR"/>
+        <result column="RESERVE4" property="reserve4" jdbcType="VARCHAR"/>
+        <result column="RESERVE5" property="reserve5" jdbcType="VARCHAR"/>
+        <result column="PHONE_NUM" property="phoneNum" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+        ID
+        , CUST_NO, CUST_NAME, CUST_BRCH_NO, OPER_PERSON, CUST_ACCT_NO, CUST_ACCT_NAME,
+    SIGN_BRCH_NO, SIGN_BANK_NAME, REMARK1, REMARK2, AUDIT_STATUS, SIGN_STATUS, CREATE_TIME, 
+    UPDATE_TIME, FLAG, RESERVE1, RESERVE2, RESERVE3, RESERVE4, RESERVE5, PHONE_NUM
+    </sql>
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zhouzz.pojo.HuisbankMesgSignExample">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from HUISBANK_MESG_SIGN
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <delete id="deleteByExample" parameterType="com.zhouzz.pojo.HuisbankMesgSignExample">
+        delete from HUISBANK_MESG_SIGN
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.zhouzz.pojo.HuisbankMesgSign">
+        insert into HUISBANK_MESG_SIGN (ID, CUST_NO, CUST_NAME,
+                                        CUST_BRCH_NO, OPER_PERSON, CUST_ACCT_NO,
+                                        CUST_ACCT_NAME, SIGN_BRCH_NO, SIGN_BANK_NAME,
+                                        REMARK1, REMARK2, AUDIT_STATUS,
+                                        SIGN_STATUS, CREATE_TIME, UPDATE_TIME,
+                                        FLAG, RESERVE1, RESERVE2,
+                                        RESERVE3, RESERVE4, RESERVE5,
+                                        PHONE_NUM)
+        values (#{id,jdbcType=NUMERIC}, #{custNo,jdbcType=VARCHAR}, #{custName,jdbcType=VARCHAR},
+                #{custBrchNo,jdbcType=VARCHAR}, #{operPerson,jdbcType=VARCHAR}, #{custAcctNo,jdbcType=VARCHAR},
+                #{custAcctName,jdbcType=VARCHAR}, #{signBrchNo,jdbcType=VARCHAR}, #{signBankName,jdbcType=VARCHAR},
+                #{remark1,jdbcType=VARCHAR}, #{remark2,jdbcType=VARCHAR}, #{auditStatus,jdbcType=CHAR},
+                #{signStatus,jdbcType=CHAR}, #{createTime,jdbcType=NUMERIC}, #{updateTime,jdbcType=NUMERIC},
+                #{flag,jdbcType=CHAR}, #{reserve1,jdbcType=VARCHAR}, #{reserve2,jdbcType=VARCHAR},
+                #{reserve3,jdbcType=VARCHAR}, #{reserve4,jdbcType=VARCHAR}, #{reserve5,jdbcType=VARCHAR},
+                #{phoneNum,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.zhouzz.pojo.HuisbankMesgSign">
+        insert into HUISBANK_MESG_SIGN
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="custNo != null">
+                CUST_NO,
+            </if>
+            <if test="custName != null">
+                CUST_NAME,
+            </if>
+            <if test="custBrchNo != null">
+                CUST_BRCH_NO,
+            </if>
+            <if test="operPerson != null">
+                OPER_PERSON,
+            </if>
+            <if test="custAcctNo != null">
+                CUST_ACCT_NO,
+            </if>
+            <if test="custAcctName != null">
+                CUST_ACCT_NAME,
+            </if>
+            <if test="signBrchNo != null">
+                SIGN_BRCH_NO,
+            </if>
+            <if test="signBankName != null">
+                SIGN_BANK_NAME,
+            </if>
+            <if test="remark1 != null">
+                REMARK1,
+            </if>
+            <if test="remark2 != null">
+                REMARK2,
+            </if>
+            <if test="auditStatus != null">
+                AUDIT_STATUS,
+            </if>
+            <if test="signStatus != null">
+                SIGN_STATUS,
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME,
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME,
+            </if>
+            <if test="flag != null">
+                FLAG,
+            </if>
+            <if test="reserve1 != null">
+                RESERVE1,
+            </if>
+            <if test="reserve2 != null">
+                RESERVE2,
+            </if>
+            <if test="reserve3 != null">
+                RESERVE3,
+            </if>
+            <if test="reserve4 != null">
+                RESERVE4,
+            </if>
+            <if test="reserve5 != null">
+                RESERVE5,
+            </if>
+            <if test="phoneNum != null">
+                PHONE_NUM,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=NUMERIC},
+            </if>
+            <if test="custNo != null">
+                #{custNo,jdbcType=VARCHAR},
+            </if>
+            <if test="custName != null">
+                #{custName,jdbcType=VARCHAR},
+            </if>
+            <if test="custBrchNo != null">
+                #{custBrchNo,jdbcType=VARCHAR},
+            </if>
+            <if test="operPerson != null">
+                #{operPerson,jdbcType=VARCHAR},
+            </if>
+            <if test="custAcctNo != null">
+                #{custAcctNo,jdbcType=VARCHAR},
+            </if>
+            <if test="custAcctName != null">
+                #{custAcctName,jdbcType=VARCHAR},
+            </if>
+            <if test="signBrchNo != null">
+                #{signBrchNo,jdbcType=VARCHAR},
+            </if>
+            <if test="signBankName != null">
+                #{signBankName,jdbcType=VARCHAR},
+            </if>
+            <if test="remark1 != null">
+                #{remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="remark2 != null">
+                #{remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="auditStatus != null">
+                #{auditStatus,jdbcType=CHAR},
+            </if>
+            <if test="signStatus != null">
+                #{signStatus,jdbcType=CHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=NUMERIC},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=NUMERIC},
+            </if>
+            <if test="flag != null">
+                #{flag,jdbcType=CHAR},
+            </if>
+            <if test="reserve1 != null">
+                #{reserve1,jdbcType=VARCHAR},
+            </if>
+            <if test="reserve2 != null">
+                #{reserve2,jdbcType=VARCHAR},
+            </if>
+            <if test="reserve3 != null">
+                #{reserve3,jdbcType=VARCHAR},
+            </if>
+            <if test="reserve4 != null">
+                #{reserve4,jdbcType=VARCHAR},
+            </if>
+            <if test="reserve5 != null">
+                #{reserve5,jdbcType=VARCHAR},
+            </if>
+            <if test="phoneNum != null">
+                #{phoneNum,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.zhouzz.pojo.HuisbankMesgSignExample" resultType="java.lang.Integer">
+        select count(*) from HUISBANK_MESG_SIGN
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update HUISBANK_MESG_SIGN
+        <set>
+            <if test="record.id != null">
+                ID = #{record.id,jdbcType=NUMERIC},
+            </if>
+            <if test="record.custNo != null">
+                CUST_NO = #{record.custNo,jdbcType=VARCHAR},
+            </if>
+            <if test="record.custName != null">
+                CUST_NAME = #{record.custName,jdbcType=VARCHAR},
+            </if>
+            <if test="record.custBrchNo != null">
+                CUST_BRCH_NO = #{record.custBrchNo,jdbcType=VARCHAR},
+            </if>
+            <if test="record.operPerson != null">
+                OPER_PERSON = #{record.operPerson,jdbcType=VARCHAR},
+            </if>
+            <if test="record.custAcctNo != null">
+                CUST_ACCT_NO = #{record.custAcctNo,jdbcType=VARCHAR},
+            </if>
+            <if test="record.custAcctName != null">
+                CUST_ACCT_NAME = #{record.custAcctName,jdbcType=VARCHAR},
+            </if>
+            <if test="record.signBrchNo != null">
+                SIGN_BRCH_NO = #{record.signBrchNo,jdbcType=VARCHAR},
+            </if>
+            <if test="record.signBankName != null">
+                SIGN_BANK_NAME = #{record.signBankName,jdbcType=VARCHAR},
+            </if>
+            <if test="record.remark1 != null">
+                REMARK1 = #{record.remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="record.remark2 != null">
+                REMARK2 = #{record.remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="record.auditStatus != null">
+                AUDIT_STATUS = #{record.auditStatus,jdbcType=CHAR},
+            </if>
+            <if test="record.signStatus != null">
+                SIGN_STATUS = #{record.signStatus,jdbcType=CHAR},
+            </if>
+            <if test="record.createTime != null">
+                CREATE_TIME = #{record.createTime,jdbcType=NUMERIC},
+            </if>
+            <if test="record.updateTime != null">
+                UPDATE_TIME = #{record.updateTime,jdbcType=NUMERIC},
+            </if>
+            <if test="record.flag != null">
+                FLAG = #{record.flag,jdbcType=CHAR},
+            </if>
+            <if test="record.reserve1 != null">
+                RESERVE1 = #{record.reserve1,jdbcType=VARCHAR},
+            </if>
+            <if test="record.reserve2 != null">
+                RESERVE2 = #{record.reserve2,jdbcType=VARCHAR},
+            </if>
+            <if test="record.reserve3 != null">
+                RESERVE3 = #{record.reserve3,jdbcType=VARCHAR},
+            </if>
+            <if test="record.reserve4 != null">
+                RESERVE4 = #{record.reserve4,jdbcType=VARCHAR},
+            </if>
+            <if test="record.reserve5 != null">
+                RESERVE5 = #{record.reserve5,jdbcType=VARCHAR},
+            </if>
+            <if test="record.phoneNum != null">
+                PHONE_NUM = #{record.phoneNum,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update HUISBANK_MESG_SIGN
+        set ID = #{record.id,jdbcType=NUMERIC},
+        CUST_NO = #{record.custNo,jdbcType=VARCHAR},
+        CUST_NAME = #{record.custName,jdbcType=VARCHAR},
+        CUST_BRCH_NO = #{record.custBrchNo,jdbcType=VARCHAR},
+        OPER_PERSON = #{record.operPerson,jdbcType=VARCHAR},
+        CUST_ACCT_NO = #{record.custAcctNo,jdbcType=VARCHAR},
+        CUST_ACCT_NAME = #{record.custAcctName,jdbcType=VARCHAR},
+        SIGN_BRCH_NO = #{record.signBrchNo,jdbcType=VARCHAR},
+        SIGN_BANK_NAME = #{record.signBankName,jdbcType=VARCHAR},
+        REMARK1 = #{record.remark1,jdbcType=VARCHAR},
+        REMARK2 = #{record.remark2,jdbcType=VARCHAR},
+        AUDIT_STATUS = #{record.auditStatus,jdbcType=CHAR},
+        SIGN_STATUS = #{record.signStatus,jdbcType=CHAR},
+        CREATE_TIME = #{record.createTime,jdbcType=NUMERIC},
+        UPDATE_TIME = #{record.updateTime,jdbcType=NUMERIC},
+        FLAG = #{record.flag,jdbcType=CHAR},
+        RESERVE1 = #{record.reserve1,jdbcType=VARCHAR},
+        RESERVE2 = #{record.reserve2,jdbcType=VARCHAR},
+        RESERVE3 = #{record.reserve3,jdbcType=VARCHAR},
+        RESERVE4 = #{record.reserve4,jdbcType=VARCHAR},
+        RESERVE5 = #{record.reserve5,jdbcType=VARCHAR},
+        PHONE_NUM = #{record.phoneNum,jdbcType=VARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <!--根据多个ids 批量更新状态，如果有的条件为空 或者 null 就不更新-->
+    <update id="updateStatus">
+        update HUISBANK_MESG_SIGN
+        <set>
+        <if test="auditStatus != null and auditStatus != '' ">
+            AUDIT_STATUS = #{auditStatus} ,
+        </if>
+        <if test="signStatus != null and signStatus != '' ">
+            SIGN_STATUS = #{signStatus},
+        </if>
+      </set>
+        where ID in
+        <foreach item="item" collection="ids" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+
+
+    </update>
+
+
+</mapper>

@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhouzz.mapper.EmpMapperTest">
+  <resultMap id="BaseResultMap" type="com.zhouzz.pojo.EmpTest">
+    <id column="EMPNO" jdbcType="NUMERIC" property="empno" />
+    <result column="ENAME" jdbcType="VARCHAR" property="ename" />
+    <result column="JOB" jdbcType="VARCHAR" property="job" />
+    <result column="MGR" jdbcType="NUMERIC" property="mgr" />
+    <result column="HIREDATE" jdbcType="TIMESTAMP" property="hiredate" />
+    <result column="SAL" jdbcType="NUMERIC" property="sal" />
+    <result column="COMM" jdbcType="NUMERIC" property="comm" />
+    <result column="DEPTNO" jdbcType="NUMERIC" property="deptno" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO
+  </sql>
+  <select id="selectByExample" parameterType="com.zhouzz.pojo.EmpExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from EMP
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from EMP
+    where EMPNO = #{empno,jdbcType=NUMERIC}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from EMP
+    where EMPNO = #{empno,jdbcType=NUMERIC}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zhouzz.pojo.EmpExample">
+    delete from EMP
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zhouzz.pojo.EmpTest">
+    insert into EMP (EMPNO, ENAME, JOB, 
+      MGR, HIREDATE, SAL, 
+      COMM, DEPTNO)
+    values (#{empno,jdbcType=NUMERIC}, #{ename,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, 
+      #{mgr,jdbcType=NUMERIC}, #{hiredate,jdbcType=TIMESTAMP}, #{sal,jdbcType=NUMERIC}, 
+      #{comm,jdbcType=NUMERIC}, #{deptno,jdbcType=NUMERIC})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhouzz.pojo.EmpTest">
+    insert into EMP
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="empno != null">
+        EMPNO,
+      </if>
+      <if test="ename != null">
+        ENAME,
+      </if>
+      <if test="job != null">
+        JOB,
+      </if>
+      <if test="mgr != null">
+        MGR,
+      </if>
+      <if test="hiredate != null">
+        HIREDATE,
+      </if>
+      <if test="sal != null">
+        SAL,
+      </if>
+      <if test="comm != null">
+        COMM,
+      </if>
+      <if test="deptno != null">
+        DEPTNO,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="empno != null">
+        #{empno,jdbcType=NUMERIC},
+      </if>
+      <if test="ename != null">
+        #{ename,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null">
+        #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="mgr != null">
+        #{mgr,jdbcType=NUMERIC},
+      </if>
+      <if test="hiredate != null">
+        #{hiredate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sal != null">
+        #{sal,jdbcType=NUMERIC},
+      </if>
+      <if test="comm != null">
+        #{comm,jdbcType=NUMERIC},
+      </if>
+      <if test="deptno != null">
+        #{deptno,jdbcType=NUMERIC},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zhouzz.pojo.EmpExample" resultType="java.lang.Integer">
+    select count(*) from EMP
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update EMP
+    <set>
+      <if test="record.empno != null">
+        EMPNO = #{record.empno,jdbcType=NUMERIC},
+      </if>
+      <if test="record.ename != null">
+        ENAME = #{record.ename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.job != null">
+        JOB = #{record.job,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mgr != null">
+        MGR = #{record.mgr,jdbcType=NUMERIC},
+      </if>
+      <if test="record.hiredate != null">
+        HIREDATE = #{record.hiredate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sal != null">
+        SAL = #{record.sal,jdbcType=NUMERIC},
+      </if>
+      <if test="record.comm != null">
+        COMM = #{record.comm,jdbcType=NUMERIC},
+      </if>
+      <if test="record.deptno != null">
+        DEPTNO = #{record.deptno,jdbcType=NUMERIC},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update EMP
+    set EMPNO = #{record.empno,jdbcType=NUMERIC},
+      ENAME = #{record.ename,jdbcType=VARCHAR},
+      JOB = #{record.job,jdbcType=VARCHAR},
+      MGR = #{record.mgr,jdbcType=NUMERIC},
+      HIREDATE = #{record.hiredate,jdbcType=TIMESTAMP},
+      SAL = #{record.sal,jdbcType=NUMERIC},
+      COMM = #{record.comm,jdbcType=NUMERIC},
+      DEPTNO = #{record.deptno,jdbcType=NUMERIC}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhouzz.pojo.EmpTest">
+    update EMP
+    <set>
+      <if test="ename != null">
+        ENAME = #{ename,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null">
+        JOB = #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="mgr != null">
+        MGR = #{mgr,jdbcType=NUMERIC},
+      </if>
+      <if test="hiredate != null">
+        HIREDATE = #{hiredate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sal != null">
+        SAL = #{sal,jdbcType=NUMERIC},
+      </if>
+      <if test="comm != null">
+        COMM = #{comm,jdbcType=NUMERIC},
+      </if>
+      <if test="deptno != null">
+        DEPTNO = #{deptno,jdbcType=NUMERIC},
+      </if>
+    </set>
+    where EMPNO = #{empno,jdbcType=NUMERIC}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhouzz.pojo.EmpTest">
+    update EMP
+    set ENAME = #{ename,jdbcType=VARCHAR},
+      JOB = #{job,jdbcType=VARCHAR},
+      MGR = #{mgr,jdbcType=NUMERIC},
+      HIREDATE = #{hiredate,jdbcType=TIMESTAMP},
+      SAL = #{sal,jdbcType=NUMERIC},
+      COMM = #{comm,jdbcType=NUMERIC},
+      DEPTNO = #{deptno,jdbcType=NUMERIC}
+    where EMPNO = #{empno,jdbcType=NUMERIC}
+  </update>
+
+
+    <!-- 插入员工 -->
+    <insert id="insertEmp" parameterType="com.zhouzz.pojo.EmpTest">
+        insert into emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)
+        values (#{empno}, #{ename}, #{job}, #{mgr}, #{hiredate}, #{sal}, #{comm}, #{deptno})
+    </insert>
+    <insert id="insertEmpAutoPrimaryKey" keyProperty="empno" parameterType="com.zhouzz.pojo.EmpTest" useGeneratedKeys="true">
+        <selectKey keyProperty="empno" order="BEFORE" resultType="int">
+            SELECT nvl(max(empno), 1000) + 1 FROM emp
+        </selectKey>
+        insert into emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) values ( #{empno}, #{ename}, #{job},
+        #{mgr}, #{hiredate},
+        #{sal}, #{comm}, #{deptno})
+    </insert>
+
+    <update id="updateEmp" parameterType="com.zhouzz.pojo.EmpTest">
+        update emp
+        set ename = #{ename}
+        where empno = #{empno}
+    </update>
+
+    <!-- 根据员工号批量删除员工-->
+    <delete id="deleteEmpsByEmpno" parameterType="java.util.List">
+        delete from emp where empno in
+        <foreach close=")" collection="empnos" item="empno" open="(" separator=",">
+            #{empno}
+        </foreach>
+    </delete>
+
+
+    <!-- 根据部门号查询员工-->
+    <!--查询时候必须设置resultType 或者 resultMap，
+     resultType 就是pojo的类名，
+     resultMap就是xml文件中配置的resultMap 自定义的名字
+    否则会报错-->
+    <select id="selectEmpByEmpno" resultType="com.zhouzz.pojo.EmpTest">
+
+        select * from emp where empno = #{empno}
+        <!-- 这里的#{empno}就是pojo的属性名，要和pojo的属性名一致 虽然不一样但是mybatis会自动匹配 尽量做到属性名一致 -->
+        <!--select * from emp where empno = '${empno}'  也可以写成这种形式，但是不推荐-->
+
+    </select>
+
+
+    <!-- 查询所有员工 -->
+    <select id="selectAllEmps" resultType="com.zhouzz.pojo.EmpTest">
+        select *
+        from emp
+    </select>
+
+    <!-- 根据部门号和员工名模糊查询员工 -->
+    <select id="selectEmpsByDeptAndName" resultType="com.zhouzz.pojo.EmpTest">
+        select *
+        from emp
+        where deptno = #{deptno}
+          and ename like '%${ename}%'
+    </select>
+
+    <!-- 根据map参数查询员工信息 -->
+    <select id="selectEmpsByMap" resultType="com.zhouzz.pojo.EmpTest">
+        select *
+        from emp
+        where deptno = #{deptno}
+          and ename like '%${ename}%'
+    </select>
+
+    <!-- 查询员工总数 -->
+    <select id="selectEmpCount" resultType="java.lang.Integer">
+        select count(*)
+        from emp
+    </select>
+
+
+    <select id="selectEmpByEmpnoToMap" resultType="java.util.Map">
+        select empno,
+               ename,
+               job,
+               mgr,
+               hiredate,
+               sal,
+               comm,
+               deptno
+        from emp
+        where empno = #{empno}
+    </select>
+    <!-- 查询所有员工信息，返回List<Map<String, Object>>，其中Map的key是pojo的属性名，value是pojo的属性值，-->
+    <select id="selectAllEmpsToMap" resultType="java.util.Map">
+        select empno,
+               ename,
+               job,
+               mgr,
+               hiredate,
+               sal,
+               comm,
+               deptno
+        from emp
+    </select>
+    <select id="selectAllEmpsToMap2" resultType="java.util.Map">
+        select empno,
+               ename,
+               job,
+               mgr,
+               hiredate,
+               sal,
+               comm,
+               deptno
+        from emp
+        order by deptno
+
+    </select>
+    <!-- 根据数据库表名称查询所有数据-->
+    <select id="selectByTableName" resultType="java.util.Map">
+        select *
+        from ${tableName}
+    </select>
+    <select id="selectEmpAndDept" resultType="java.util.Map">
+
+        select empno,
+               ename,
+               job,
+               mgr,
+               hiredate,
+               sal,
+               comm,
+               emp.deptno,
+               dept.dname,
+               dept.loc
+        from emp,
+             dept
+        where emp.deptno = dept.deptno
+
+
+    </select>
+
+    <select id="selectEmpAndDept2" resultType="com.zhouzz.pojo.EmpExt">
+        select empno,
+               ename,
+               job,
+               mgr,
+               hiredate,
+               sal,
+               comm,
+               emp.deptno,
+               dept.dname,
+               dept.loc
+        from dept,
+             emp
+        where dept.deptno = emp.deptno
+    </select>
+
+    <resultMap id="empMapDeptMoreToOne" type="com.zhouzz.pojo.EmpTest">
+        <id column="empno" property="empno" />
+        <result column="ename" property="ename" />
+        <result column="job" property="job" />
+        <result column="mgr" property="mgr" />
+        <result column="hiredate" property="hiredate" />
+        <result column="sal" property="sal" />
+        <result column="comm" property="comm" />
+        <association javaType="com.zhouzz.pojo.Dept" property="dept">
+            <id column="deptno" property="deptno" />
+            <result column="dname" property="dname" />
+            <result column="loc" property="loc" />
+        </association>
+    </resultMap>
+    <!--员工部门多对一查询 resultMap -->
+    <select id="selectEmpAndDept3" resultMap="empMapDeptMoreToOne">
+        select empno,
+               ename,
+               job,
+               mgr,
+               hiredate,
+               sal,
+               comm,
+               emp.deptno,
+               dept.dname,
+               dept.loc
+        from emp,
+             dept
+        where emp.deptno = dept.deptno and empno = #{empno}
+
+    </select>
+
+    <resultMap id="DeptAndEmpOneToMore" type="com.zhouzz.pojo.Dept">
+        <id column="deptno" property="deptno" />
+        <result column="dname" property="dname" />
+        <result column="loc" property="loc" />
+        <collection ofType="com.zhouzz.pojo.EmpTest" property="emps">
+            <id column="empno" property="empno" />
+            <result column="ename" property="ename" />
+            <result column="job" property="job" />
+            <result column="mgr" property="mgr" />
+            <result column="hiredate" property="hiredate" />
+            <result column="sal" property="sal" />
+            <result column="comm" property="comm" />
+        </collection>
+    </resultMap>
+
+    <select id="selectDeptAndEmp" resultMap="DeptAndEmpOneToMore">
+
+         select b.deptno,
+              b.dname,
+                b.loc,
+                a.empno,
+                a.ename,
+                a.job,
+                a.mgr,
+                a.hiredate,
+                a.sal,
+                a.comm
+         from emp a , dept b
+         where a.deptno = b.deptno
+             <if test="deptno!=null and deptno!=''">
+                 and b.deptno = #{deptno}
+             </if>
+
+
+    </select>
+
+    <!-- 根据员工号批量删除员工-->
+
+    <delete id="deleteEmps" parameterType="java.util.List">
+        delete from emp where empno in
+        <foreach close=")" collection="empnos" item="empno" open="(" separator=",">
+            #{empno}
+        </foreach>
+    </delete>
+
+
+</mapper>
