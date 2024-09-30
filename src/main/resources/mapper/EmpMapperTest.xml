@@ -262,6 +262,7 @@
         insert into emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)
         values (#{empno}, #{ename}, #{job}, #{mgr}, #{hiredate}, #{sal}, #{comm}, #{deptno})
     </insert>
+
     <insert id="insertEmpAutoPrimaryKey" keyProperty="empno" parameterType="com.zhouzz.pojo.EmpTest" useGeneratedKeys="true">
         <selectKey keyProperty="empno" order="BEFORE" resultType="int">
             SELECT nvl(max(empno), 1000) + 1 FROM emp
