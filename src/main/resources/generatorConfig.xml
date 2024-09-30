@@ -23,8 +23,8 @@
         </jdbcConnection>-->
         <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
                         connectionURL="jdbc:oracle:thin:@localhost:1521:orcl"
-                        userId="ZHOU"
-                        password="ZHOU">
+                        userId="C##ZHOU"
+                        password="C##ZHOU">
         </jdbcConnection>
         <!-- javaBean的生成策略-->
         <javaModelGenerator targetPackage="com.zhouzz.pojo" targetProject=".\src\main\java">
@@ -47,7 +47,7 @@
 <!--
         <table tableName="huisbank_green_credit" domainObjectName="HuisbankGreenCredit"/>
 -->
-        <table tableName="emp" domainObjectName="Emp"/>
+        <table tableName="HUISBANK_CUST_ASSET_STATISTICS" domainObjectName="HuisbankCustAssetStatistics"/>
        <!-- <table tableName="t_dept" domainObjectName="Dept"/>-->
     </context>
 

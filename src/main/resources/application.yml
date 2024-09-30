@@ -12,9 +12,9 @@ spring:
     # url: jdbc:mysql://127.0.0.1:3306/testdb
     url: jdbc:oracle:thin:@localhost:1521:orcl
     #用户名
-    username: ZHOU
+    username: C##ZHOU
     #密码
-    password: ZHOU
+    password: C##ZHOU
 
 
 #mybatis配置 在控制台打印日志
@@ -33,3 +33,8 @@ logging:
         ibatis: DEBUG
       mybatis:
         spring: DEBUG
+
+#配置redis
+redis:
+  host: 127.0.0.1 #redis地址
+  port: 6379 #redis端口

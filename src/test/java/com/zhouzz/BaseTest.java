@@ -3,8 +3,10 @@ package com.zhouzz;
 import com.zhouzz.mapper.EmpMapper;
 import com.zhouzz.mapper.EmpMapperTest;
 import com.zhouzz.mapper.HuisbankMesgSignMapper;
+import com.zhouzz.mapper.StudentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  * @author zzz
@@ -14,7 +16,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 
 @SpringBootTest
-public  class BaseTest {
+public class BaseTest {
 
     @Autowired
     protected EmpMapperTest empMapperTest;
@@ -23,4 +25,11 @@ public  class BaseTest {
 
     @Autowired
     protected HuisbankMesgSignMapper huisbankMesgSignMapper;
+
+    @Autowired
+    protected StudentMapper studentMapper;
+
+    @Autowired
+    protected JdbcTemplate jdbcTemplate;
+
 }
