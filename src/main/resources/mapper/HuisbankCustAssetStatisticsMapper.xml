@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhouzz.mapper.HuisbankCustAssetStatisticsMapper" >
+  <resultMap id="BaseResultMap" type="com.zhouzz.pojo.HuisbankCustAssetStatistics" >
+    <result column="CUST_ACCT_NO" property="custAcctNo" jdbcType="VARCHAR" />
+    <result column="MONEY1" property="money1" jdbcType="NUMERIC" />
+    <result column="COUNT1" property="count1" jdbcType="NUMERIC" />
+    <result column="MONEY2" property="money2" jdbcType="NUMERIC" />
+    <result column="COUNT2" property="count2" jdbcType="NUMERIC" />
+    <result column="MONEY3" property="money3" jdbcType="NUMERIC" />
+    <result column="COUNT3" property="count3" jdbcType="NUMERIC" />
+    <result column="MONEY4" property="money4" jdbcType="NUMERIC" />
+    <result column="COUNT4" property="count4" jdbcType="NUMERIC" />
+    <result column="MONEY5" property="money5" jdbcType="NUMERIC" />
+    <result column="COUNT5" property="count5" jdbcType="NUMERIC" />
+    <result column="MONEY6" property="money6" jdbcType="NUMERIC" />
+    <result column="COUNT6" property="count6" jdbcType="NUMERIC" />
+    <result column="MONEY7" property="money7" jdbcType="NUMERIC" />
+    <result column="COUNT7" property="count7" jdbcType="NUMERIC" />
+    <result column="MONEY8" property="money8" jdbcType="NUMERIC" />
+    <result column="COUNT8" property="count8" jdbcType="NUMERIC" />
+    <result column="MONEY9" property="money9" jdbcType="NUMERIC" />
+    <result column="COUNT9" property="count9" jdbcType="NUMERIC" />
+    <result column="MONEY10" property="money10" jdbcType="NUMERIC" />
+    <result column="COUNT10" property="count10" jdbcType="NUMERIC" />
+    <result column="MONEY11" property="money11" jdbcType="NUMERIC" />
+    <result column="COUNT11" property="count11" jdbcType="NUMERIC" />
+    <result column="MONEY12" property="money12" jdbcType="NUMERIC" />
+    <result column="COUNT12" property="count12" jdbcType="NUMERIC" />
+    <result column="MONEY13" property="money13" jdbcType="NUMERIC" />
+    <result column="COUNT13" property="count13" jdbcType="NUMERIC" />
+    <result column="MONEY14" property="money14" jdbcType="NUMERIC" />
+    <result column="COUNT14" property="count14" jdbcType="NUMERIC" />
+    <result column="MONEY15" property="money15" jdbcType="NUMERIC" />
+    <result column="COUNT15" property="count15" jdbcType="NUMERIC" />
+    <result column="MONEY16" property="money16" jdbcType="NUMERIC" />
+    <result column="COUNT16" property="count16" jdbcType="NUMERIC" />
+    <result column="MONEY17" property="money17" jdbcType="NUMERIC" />
+    <result column="COUNT17" property="count17" jdbcType="NUMERIC" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    CUST_ACCT_NO, MONEY1, COUNT1, MONEY2, COUNT2, MONEY3, COUNT3, MONEY4, COUNT4, MONEY5, 
+    COUNT5, MONEY6, COUNT6, MONEY7, COUNT7, MONEY8, COUNT8, MONEY9, COUNT9, MONEY10, 
+    COUNT10, MONEY11, COUNT11, MONEY12, COUNT12, MONEY13, COUNT13, MONEY14, COUNT14, 
+    MONEY15, COUNT15, MONEY16, COUNT16, MONEY17, COUNT17
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zhouzz.pojo.HuisbankCustAssetStatisticsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from HUISBANK_CUST_ASSET_STATISTICS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.zhouzz.pojo.HuisbankCustAssetStatisticsExample" >
+    delete from HUISBANK_CUST_ASSET_STATISTICS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zhouzz.pojo.HuisbankCustAssetStatistics" >
+    insert into HUISBANK_CUST_ASSET_STATISTICS (CUST_ACCT_NO, MONEY1, COUNT1, 
+      MONEY2, COUNT2, MONEY3, 
+      COUNT3, MONEY4, COUNT4, 
+      MONEY5, COUNT5, MONEY6, 
+      COUNT6, MONEY7, COUNT7, 
+      MONEY8, COUNT8, MONEY9, 
+      COUNT9, MONEY10, COUNT10, 
+      MONEY11, COUNT11, MONEY12, 
+      COUNT12, MONEY13, COUNT13, 
+      MONEY14, COUNT14, MONEY15, 
+      COUNT15, MONEY16, COUNT16, 
+      MONEY17, COUNT17)
+    values (#{custAcctNo,jdbcType=VARCHAR}, #{money1,jdbcType=NUMERIC}, #{count1,jdbcType=NUMERIC}, 
+      #{money2,jdbcType=NUMERIC}, #{count2,jdbcType=NUMERIC}, #{money3,jdbcType=NUMERIC}, 
+      #{count3,jdbcType=NUMERIC}, #{money4,jdbcType=NUMERIC}, #{count4,jdbcType=NUMERIC}, 
+      #{money5,jdbcType=NUMERIC}, #{count5,jdbcType=NUMERIC}, #{money6,jdbcType=NUMERIC}, 
+      #{count6,jdbcType=NUMERIC}, #{money7,jdbcType=NUMERIC}, #{count7,jdbcType=NUMERIC}, 
+      #{money8,jdbcType=NUMERIC}, #{count8,jdbcType=NUMERIC}, #{money9,jdbcType=NUMERIC}, 
+      #{count9,jdbcType=NUMERIC}, #{money10,jdbcType=NUMERIC}, #{count10,jdbcType=NUMERIC}, 
+      #{money11,jdbcType=NUMERIC}, #{count11,jdbcType=NUMERIC}, #{money12,jdbcType=NUMERIC}, 
+      #{count12,jdbcType=NUMERIC}, #{money13,jdbcType=NUMERIC}, #{count13,jdbcType=NUMERIC}, 
+      #{money14,jdbcType=NUMERIC}, #{count14,jdbcType=NUMERIC}, #{money15,jdbcType=NUMERIC}, 
+      #{count15,jdbcType=NUMERIC}, #{money16,jdbcType=NUMERIC}, #{count16,jdbcType=NUMERIC}, 
+      #{money17,jdbcType=NUMERIC}, #{count17,jdbcType=NUMERIC})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhouzz.pojo.HuisbankCustAssetStatistics" >
+    insert into HUISBANK_CUST_ASSET_STATISTICS
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="custAcctNo != null" >
+        CUST_ACCT_NO,
+      </if>
+      <if test="money1 != null" >
+        MONEY1,
+      </if>
+      <if test="count1 != null" >
+        COUNT1,
+      </if>
+      <if test="money2 != null" >
+        MONEY2,
+      </if>
+      <if test="count2 != null" >
+        COUNT2,
+      </if>
+      <if test="money3 != null" >
+        MONEY3,
+      </if>
+      <if test="count3 != null" >
+        COUNT3,
+      </if>
+      <if test="money4 != null" >
+        MONEY4,
+      </if>
+      <if test="count4 != null" >
+        COUNT4,
+      </if>
+      <if test="money5 != null" >
+        MONEY5,
+      </if>
+      <if test="count5 != null" >
+        COUNT5,
+      </if>
+      <if test="money6 != null" >
+        MONEY6,
+      </if>
+      <if test="count6 != null" >
+        COUNT6,
+      </if>
+      <if test="money7 != null" >
+        MONEY7,
+      </if>
+      <if test="count7 != null" >
+        COUNT7,
+      </if>
+      <if test="money8 != null" >
+        MONEY8,
+      </if>
+      <if test="count8 != null" >
+        COUNT8,
+      </if>
+      <if test="money9 != null" >
+        MONEY9,
+      </if>
+      <if test="count9 != null" >
+        COUNT9,
+      </if>
+      <if test="money10 != null" >
+        MONEY10,
+      </if>
+      <if test="count10 != null" >
+        COUNT10,
+      </if>
+      <if test="money11 != null" >
+        MONEY11,
+      </if>
+      <if test="count11 != null" >
+        COUNT11,
+      </if>
+      <if test="money12 != null" >
+        MONEY12,
+      </if>
+      <if test="count12 != null" >
+        COUNT12,
+      </if>
+      <if test="money13 != null" >
+        MONEY13,
+      </if>
+      <if test="count13 != null" >
+        COUNT13,
+      </if>
+      <if test="money14 != null" >
+        MONEY14,
+      </if>
+      <if test="count14 != null" >
+        COUNT14,
+      </if>
+      <if test="money15 != null" >
+        MONEY15,
+      </if>
+      <if test="count15 != null" >
+        COUNT15,
+      </if>
+      <if test="money16 != null" >
+        MONEY16,
+      </if>
+      <if test="count16 != null" >
+        COUNT16,
+      </if>
+      <if test="money17 != null" >
+        MONEY17,
+      </if>
+      <if test="count17 != null" >
+        COUNT17,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="custAcctNo != null" >
+        #{custAcctNo,jdbcType=VARCHAR},
+      </if>
+      <if test="money1 != null" >
+        #{money1,jdbcType=NUMERIC},
+      </if>
+      <if test="count1 != null" >
+        #{count1,jdbcType=NUMERIC},
+      </if>
+      <if test="money2 != null" >
+        #{money2,jdbcType=NUMERIC},
+      </if>
+      <if test="count2 != null" >
+        #{count2,jdbcType=NUMERIC},
+      </if>
+      <if test="money3 != null" >
+        #{money3,jdbcType=NUMERIC},
+      </if>
+      <if test="count3 != null" >
+        #{count3,jdbcType=NUMERIC},
+      </if>
+      <if test="money4 != null" >
+        #{money4,jdbcType=NUMERIC},
+      </if>
+      <if test="count4 != null" >
+        #{count4,jdbcType=NUMERIC},
+      </if>
+      <if test="money5 != null" >
+        #{money5,jdbcType=NUMERIC},
+      </if>
+      <if test="count5 != null" >
+        #{count5,jdbcType=NUMERIC},
+      </if>
+      <if test="money6 != null" >
+        #{money6,jdbcType=NUMERIC},
+      </if>
+      <if test="count6 != null" >
+        #{count6,jdbcType=NUMERIC},
+      </if>
+      <if test="money7 != null" >
+        #{money7,jdbcType=NUMERIC},
+      </if>
+      <if test="count7 != null" >
+        #{count7,jdbcType=NUMERIC},
+      </if>
+      <if test="money8 != null" >
+        #{money8,jdbcType=NUMERIC},
+      </if>
+      <if test="count8 != null" >
+        #{count8,jdbcType=NUMERIC},
+      </if>
+      <if test="money9 != null" >
+        #{money9,jdbcType=NUMERIC},
+      </if>
+      <if test="count9 != null" >
+        #{count9,jdbcType=NUMERIC},
+      </if>
+      <if test="money10 != null" >
+        #{money10,jdbcType=NUMERIC},
+      </if>
+      <if test="count10 != null" >
+        #{count10,jdbcType=NUMERIC},
+      </if>
+      <if test="money11 != null" >
+        #{money11,jdbcType=NUMERIC},
+      </if>
+      <if test="count11 != null" >
+        #{count11,jdbcType=NUMERIC},
+      </if>
+      <if test="money12 != null" >
+        #{money12,jdbcType=NUMERIC},
+      </if>
+      <if test="count12 != null" >
+        #{count12,jdbcType=NUMERIC},
+      </if>
+      <if test="money13 != null" >
+        #{money13,jdbcType=NUMERIC},
+      </if>
+      <if test="count13 != null" >
+        #{count13,jdbcType=NUMERIC},
+      </if>
+      <if test="money14 != null" >
+        #{money14,jdbcType=NUMERIC},
+      </if>
+      <if test="count14 != null" >
+        #{count14,jdbcType=NUMERIC},
+      </if>
+      <if test="money15 != null" >
+        #{money15,jdbcType=NUMERIC},
+      </if>
+      <if test="count15 != null" >
+        #{count15,jdbcType=NUMERIC},
+      </if>
+      <if test="money16 != null" >
+        #{money16,jdbcType=NUMERIC},
+      </if>
+      <if test="count16 != null" >
+        #{count16,jdbcType=NUMERIC},
+      </if>
+      <if test="money17 != null" >
+        #{money17,jdbcType=NUMERIC},
+      </if>
+      <if test="count17 != null" >
+        #{count17,jdbcType=NUMERIC},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zhouzz.pojo.HuisbankCustAssetStatisticsExample" resultType="java.lang.Integer" >
+    select count(*) from HUISBANK_CUST_ASSET_STATISTICS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update HUISBANK_CUST_ASSET_STATISTICS
+    <set >
+      <if test="record.custAcctNo != null" >
+        CUST_ACCT_NO = #{record.custAcctNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.money1 != null" >
+        MONEY1 = #{record.money1,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count1 != null" >
+        COUNT1 = #{record.count1,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money2 != null" >
+        MONEY2 = #{record.money2,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count2 != null" >
+        COUNT2 = #{record.count2,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money3 != null" >
+        MONEY3 = #{record.money3,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count3 != null" >
+        COUNT3 = #{record.count3,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money4 != null" >
+        MONEY4 = #{record.money4,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count4 != null" >
+        COUNT4 = #{record.count4,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money5 != null" >
+        MONEY5 = #{record.money5,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count5 != null" >
+        COUNT5 = #{record.count5,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money6 != null" >
+        MONEY6 = #{record.money6,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count6 != null" >
+        COUNT6 = #{record.count6,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money7 != null" >
+        MONEY7 = #{record.money7,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count7 != null" >
+        COUNT7 = #{record.count7,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money8 != null" >
+        MONEY8 = #{record.money8,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count8 != null" >
+        COUNT8 = #{record.count8,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money9 != null" >
+        MONEY9 = #{record.money9,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count9 != null" >
+        COUNT9 = #{record.count9,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money10 != null" >
+        MONEY10 = #{record.money10,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count10 != null" >
+        COUNT10 = #{record.count10,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money11 != null" >
+        MONEY11 = #{record.money11,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count11 != null" >
+        COUNT11 = #{record.count11,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money12 != null" >
+        MONEY12 = #{record.money12,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count12 != null" >
+        COUNT12 = #{record.count12,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money13 != null" >
+        MONEY13 = #{record.money13,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count13 != null" >
+        COUNT13 = #{record.count13,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money14 != null" >
+        MONEY14 = #{record.money14,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count14 != null" >
+        COUNT14 = #{record.count14,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money15 != null" >
+        MONEY15 = #{record.money15,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count15 != null" >
+        COUNT15 = #{record.count15,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money16 != null" >
+        MONEY16 = #{record.money16,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count16 != null" >
+        COUNT16 = #{record.count16,jdbcType=NUMERIC},
+      </if>
+      <if test="record.money17 != null" >
+        MONEY17 = #{record.money17,jdbcType=NUMERIC},
+      </if>
+      <if test="record.count17 != null" >
+        COUNT17 = #{record.count17,jdbcType=NUMERIC},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update HUISBANK_CUST_ASSET_STATISTICS
+    set CUST_ACCT_NO = #{record.custAcctNo,jdbcType=VARCHAR},
+      MONEY1 = #{record.money1,jdbcType=NUMERIC},
+      COUNT1 = #{record.count1,jdbcType=NUMERIC},
+      MONEY2 = #{record.money2,jdbcType=NUMERIC},
+      COUNT2 = #{record.count2,jdbcType=NUMERIC},
+      MONEY3 = #{record.money3,jdbcType=NUMERIC},
+      COUNT3 = #{record.count3,jdbcType=NUMERIC},
+      MONEY4 = #{record.money4,jdbcType=NUMERIC},
+      COUNT4 = #{record.count4,jdbcType=NUMERIC},
+      MONEY5 = #{record.money5,jdbcType=NUMERIC},
+      COUNT5 = #{record.count5,jdbcType=NUMERIC},
+      MONEY6 = #{record.money6,jdbcType=NUMERIC},
+      COUNT6 = #{record.count6,jdbcType=NUMERIC},
+      MONEY7 = #{record.money7,jdbcType=NUMERIC},
+      COUNT7 = #{record.count7,jdbcType=NUMERIC},
+      MONEY8 = #{record.money8,jdbcType=NUMERIC},
+      COUNT8 = #{record.count8,jdbcType=NUMERIC},
+      MONEY9 = #{record.money9,jdbcType=NUMERIC},
+      COUNT9 = #{record.count9,jdbcType=NUMERIC},
+      MONEY10 = #{record.money10,jdbcType=NUMERIC},
+      COUNT10 = #{record.count10,jdbcType=NUMERIC},
+      MONEY11 = #{record.money11,jdbcType=NUMERIC},
+      COUNT11 = #{record.count11,jdbcType=NUMERIC},
+      MONEY12 = #{record.money12,jdbcType=NUMERIC},
+      COUNT12 = #{record.count12,jdbcType=NUMERIC},
+      MONEY13 = #{record.money13,jdbcType=NUMERIC},
+      COUNT13 = #{record.count13,jdbcType=NUMERIC},
+      MONEY14 = #{record.money14,jdbcType=NUMERIC},
+      COUNT14 = #{record.count14,jdbcType=NUMERIC},
+      MONEY15 = #{record.money15,jdbcType=NUMERIC},
+      COUNT15 = #{record.count15,jdbcType=NUMERIC},
+      MONEY16 = #{record.money16,jdbcType=NUMERIC},
+      COUNT16 = #{record.count16,jdbcType=NUMERIC},
+      MONEY17 = #{record.money17,jdbcType=NUMERIC},
+      COUNT17 = #{record.count17,jdbcType=NUMERIC}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>
