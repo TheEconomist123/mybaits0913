@@ -1,9 +1,6 @@
 package com.zhouzz;
 
-import com.zhouzz.mapper.EmpMapper;
-import com.zhouzz.mapper.EmpMapperTest;
-import com.zhouzz.mapper.HuisbankMesgSignMapper;
-import com.zhouzz.mapper.StudentMapper;
+import com.zhouzz.mapper.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -31,5 +28,11 @@ public class BaseTest {
 
     @Autowired
     protected JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    protected TesttablebyMapper testtablebyMapper;
+
+    @Autowired
+    protected MenuMapper menuMapper;
 
 }

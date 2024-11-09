@@ -30,11 +30,19 @@ logging:
   level:
     org:
       apache:
-        ibatis: DEBUG
+        ibatis: debug
       mybatis:
-        spring: DEBUG
-
+        spring: debug
+   #com.zhouzz.mapper: debug
+   #com.github.pagehelper: debug
 #配置redis
 redis:
   host: 127.0.0.1 #redis地址
   port: 6379 #redis端口
+
+#配置oracle 方言
+pagehelper:
+  helperDialect: oracle
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

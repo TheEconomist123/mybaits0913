@@ -12,6 +12,15 @@ public class ClassifyDemo implements Serializable {
     private String  dataClass;
     private String   totalAmt;
     private String   totalCount;
+    private String desc ;
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 
     public ClassifyDemo() {
     }
@@ -52,6 +61,7 @@ public class ClassifyDemo implements Serializable {
                 "dataClass='" + dataClass + '\'' +
                 ", totalAmt='" + totalAmt + '\'' +
                 ", totalCount='" + totalCount + '\'' +
+                ", desc='" + desc + '\'' +
                 '}';
     }
 }

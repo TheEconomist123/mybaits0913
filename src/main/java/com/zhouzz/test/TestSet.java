@@ -1,6 +1,11 @@
 package com.zhouzz.test;
 
+import com.zhouzz.pojo.ClassifyDemo;
+import com.zhouzz.pojo.Dept;
+
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -11,19 +16,25 @@ import java.util.Set;
  */
 public class TestSet {
     public static void main(String[] args) {
-/*
-        //测试set集合特点
-        Set<String> set = new HashSet<>();
-        set.add("hello");
-        set.add("world");
-       System.out.println(set.add("world1"));*/
 
-        int count = 0;
-        for (int i = 0; i <= 100; i++) {
+        List<ClassifyDemo> arrayList = new ArrayList<>();
 
-            count += i;
+        ClassifyDemo cd1 = new ClassifyDemo("1", "张三", "20");
+        ClassifyDemo cd2 = new ClassifyDemo("2", "王五", "30");
+        ClassifyDemo cd3 = new ClassifyDemo("3", "王五2", "30");
+
+        arrayList.add(cd1);
+        arrayList.add(cd2);
+        arrayList.add(cd3);
+
+        for (ClassifyDemo classifyDemo : arrayList) {
+            if (classifyDemo.getTotalAmt().equals("王五")) {
+                classifyDemo.setDesc("你是王五吧");
+            }
+
         }
+        System.out.println(arrayList);
 
-        System.out.println(count);
+
     }
 }
