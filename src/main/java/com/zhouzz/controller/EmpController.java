@@ -13,6 +13,9 @@ import com.zhouzz.pojo.RequestUserParam;
 import com.zhouzz.service.AsyncService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -36,10 +39,12 @@ public class EmpController {
 
     @RequestMapping("/list")
     public CommonResult getEmpList(@RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize,
-                                   @RequestParam(value = "pageNo", defaultValue = "1") Integer pageNo) {
+                                   @RequestParam(value = "pageNo", defaultValue = "1") Integer pageNo,
+                                   @RequestParam String username) {
+        System.out.println("username = " + username);
         CommonResult commonResult = new CommonResult();
         commonResult.setCode("000000");
-        commonResult.setMsg("success");
+        commonResult.setMsg("success" + getCurrentTime());
         PageHelper.startPage(pageNo, pageSize);
         // 查询所有员工
         List<Emp> emps = empMapper.selectByExample(null);
@@ -48,6 +53,16 @@ public class EmpController {
         return commonResult;
 
     }
+
+    //获取当前时间精确到毫秒工具方法按照yyyy-MM-dd HH:mm:ss.SSS格式输出
+    public String getCurrentTime() {
+
+        //获取当前时间
+        LocalDateTime now = LocalDateTime.now();
+        //格式化输出
+        return now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS"));
+    }
+
 
     //获取员工data表
     @RequestMapping("/listData")
@@ -66,7 +81,7 @@ public class EmpController {
         commonResult.setMsg("success");
         // 查询所有员工
 
-        System.out.println("pageSize:"+pageSize+" pageNo:"+pageNo);
+        System.out.println("pageSize:" + pageSize + " pageNo:" + pageNo);
         PageHelper.startPage(pageNo, pageSize);
         List<EmployeeData> emps = employeeDataMapper.selectByExample(null);
         // 封装数据
@@ -76,9 +91,10 @@ public class EmpController {
 
         return commonResult;
     }
+
     //写一个异步操作的接口
     @RequestMapping("/async1")
-    public CommonResult  testAsync(@RequestBody RequestUserParam requestUserParam,@RequestParam  String username) throws InterruptedException {
+    public CommonResult testAsync(@RequestBody RequestUserParam requestUserParam, @RequestParam String username) throws InterruptedException {
         Thread.sleep(2000);
         System.out.println("requestUserParam = " + requestUserParam);
 
@@ -89,6 +105,9 @@ public class EmpController {
         commonResult.setMsg("此操作是异步操做，你已经请求成功！");
         return commonResult;
     }
+
+
+
 
 
 }

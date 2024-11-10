@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhouzz.mapper.EmployeeDataMapper" >
+  <resultMap id="BaseResultMap" type="com.zhouzz.pojo.EmployeeData" >
+    <result column="EMPLOYEE_ID" property="employeeId" jdbcType="NUMERIC" />
+    <result column="FIRST_NAME" property="firstName" jdbcType="VARCHAR" />
+    <result column="LAST_NAME" property="lastName" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="PHONE_NUMBER" property="phoneNumber" jdbcType="VARCHAR" />
+    <result column="HIRE_DATE" property="hireDate" jdbcType="TIMESTAMP" />
+    <result column="JOB_ID" property="jobId" jdbcType="VARCHAR" />
+    <result column="SALARY" property="salary" jdbcType="NUMERIC" />
+    <result column="COMMISSION_PCT" property="commissionPct" jdbcType="NUMERIC" />
+    <result column="MANAGER_ID" property="managerId" jdbcType="NUMERIC" />
+    <result column="DEPARTMENT_ID" property="departmentId" jdbcType="NUMERIC" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="CITY" property="city" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="VARCHAR" />
+    <result column="ZIP_CODE" property="zipCode" jdbcType="VARCHAR" />
+    <result column="COUNTRY" property="country" jdbcType="VARCHAR" />
+    <result column="GENDER" property="gender" jdbcType="VARCHAR" />
+    <result column="MARITAL_STATUS" property="maritalStatus" jdbcType="VARCHAR" />
+    <result column="BIRTH_DATE" property="birthDate" jdbcType="TIMESTAMP" />
+    <result column="NATIONALITY" property="nationality" jdbcType="VARCHAR" />
+    <result column="EMPLOYMENT_TYPE" property="employmentType" jdbcType="VARCHAR" />
+    <result column="EDUCATION_LEVEL" property="educationLevel" jdbcType="VARCHAR" />
+    <result column="POSITION" property="position" jdbcType="VARCHAR" />
+    <result column="HIRE_STATUS" property="hireStatus" jdbcType="VARCHAR" />
+    <result column="WORK_EXPERIENCE" property="workExperience" jdbcType="NUMERIC" />
+    <result column="SHIFT_TYPE" property="shiftType" jdbcType="VARCHAR" />
+    <result column="EMERGENCY_CONTACT_NAME" property="emergencyContactName" jdbcType="VARCHAR" />
+    <result column="EMERGENCY_CONTACT_PHONE" property="emergencyContactPhone" jdbcType="VARCHAR" />
+    <result column="BANK_ACCOUNT_NUMBER" property="bankAccountNumber" jdbcType="VARCHAR" />
+    <result column="BANK_NAME" property="bankName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, 
+    COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID, ADDRESS, CITY, STATE, ZIP_CODE, COUNTRY, 
+    GENDER, MARITAL_STATUS, BIRTH_DATE, NATIONALITY, EMPLOYMENT_TYPE, EDUCATION_LEVEL, 
+    POSITION, HIRE_STATUS, WORK_EXPERIENCE, SHIFT_TYPE, EMERGENCY_CONTACT_NAME, EMERGENCY_CONTACT_PHONE, 
+    BANK_ACCOUNT_NUMBER, BANK_NAME
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zhouzz.pojo.EmployeeDataExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from EMPLOYEE_DATA
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.zhouzz.pojo.EmployeeDataExample" >
+    delete from EMPLOYEE_DATA
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zhouzz.pojo.EmployeeData" >
+    insert into EMPLOYEE_DATA (EMPLOYEE_ID, FIRST_NAME, LAST_NAME, 
+      EMAIL, PHONE_NUMBER, HIRE_DATE, 
+      JOB_ID, SALARY, COMMISSION_PCT, 
+      MANAGER_ID, DEPARTMENT_ID, ADDRESS, 
+      CITY, STATE, ZIP_CODE, 
+      COUNTRY, GENDER, MARITAL_STATUS, 
+      BIRTH_DATE, NATIONALITY, EMPLOYMENT_TYPE, 
+      EDUCATION_LEVEL, POSITION, HIRE_STATUS, 
+      WORK_EXPERIENCE, SHIFT_TYPE, EMERGENCY_CONTACT_NAME, 
+      EMERGENCY_CONTACT_PHONE, BANK_ACCOUNT_NUMBER, 
+      BANK_NAME)
+    values (#{employeeId,jdbcType=NUMERIC}, #{firstName,jdbcType=VARCHAR}, #{lastName,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, #{hireDate,jdbcType=TIMESTAMP}, 
+      #{jobId,jdbcType=VARCHAR}, #{salary,jdbcType=NUMERIC}, #{commissionPct,jdbcType=NUMERIC}, 
+      #{managerId,jdbcType=NUMERIC}, #{departmentId,jdbcType=NUMERIC}, #{address,jdbcType=VARCHAR}, 
+      #{city,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{zipCode,jdbcType=VARCHAR}, 
+      #{country,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, #{maritalStatus,jdbcType=VARCHAR}, 
+      #{birthDate,jdbcType=TIMESTAMP}, #{nationality,jdbcType=VARCHAR}, #{employmentType,jdbcType=VARCHAR}, 
+      #{educationLevel,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, #{hireStatus,jdbcType=VARCHAR}, 
+      #{workExperience,jdbcType=NUMERIC}, #{shiftType,jdbcType=VARCHAR}, #{emergencyContactName,jdbcType=VARCHAR}, 
+      #{emergencyContactPhone,jdbcType=VARCHAR}, #{bankAccountNumber,jdbcType=VARCHAR}, 
+      #{bankName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhouzz.pojo.EmployeeData" >
+    insert into EMPLOYEE_DATA
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="employeeId != null" >
+        EMPLOYEE_ID,
+      </if>
+      <if test="firstName != null" >
+        FIRST_NAME,
+      </if>
+      <if test="lastName != null" >
+        LAST_NAME,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="phoneNumber != null" >
+        PHONE_NUMBER,
+      </if>
+      <if test="hireDate != null" >
+        HIRE_DATE,
+      </if>
+      <if test="jobId != null" >
+        JOB_ID,
+      </if>
+      <if test="salary != null" >
+        SALARY,
+      </if>
+      <if test="commissionPct != null" >
+        COMMISSION_PCT,
+      </if>
+      <if test="managerId != null" >
+        MANAGER_ID,
+      </if>
+      <if test="departmentId != null" >
+        DEPARTMENT_ID,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="city != null" >
+        CITY,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+      <if test="zipCode != null" >
+        ZIP_CODE,
+      </if>
+      <if test="country != null" >
+        COUNTRY,
+      </if>
+      <if test="gender != null" >
+        GENDER,
+      </if>
+      <if test="maritalStatus != null" >
+        MARITAL_STATUS,
+      </if>
+      <if test="birthDate != null" >
+        BIRTH_DATE,
+      </if>
+      <if test="nationality != null" >
+        NATIONALITY,
+      </if>
+      <if test="employmentType != null" >
+        EMPLOYMENT_TYPE,
+      </if>
+      <if test="educationLevel != null" >
+        EDUCATION_LEVEL,
+      </if>
+      <if test="position != null" >
+        POSITION,
+      </if>
+      <if test="hireStatus != null" >
+        HIRE_STATUS,
+      </if>
+      <if test="workExperience != null" >
+        WORK_EXPERIENCE,
+      </if>
+      <if test="shiftType != null" >
+        SHIFT_TYPE,
+      </if>
+      <if test="emergencyContactName != null" >
+        EMERGENCY_CONTACT_NAME,
+      </if>
+      <if test="emergencyContactPhone != null" >
+        EMERGENCY_CONTACT_PHONE,
+      </if>
+      <if test="bankAccountNumber != null" >
+        BANK_ACCOUNT_NUMBER,
+      </if>
+      <if test="bankName != null" >
+        BANK_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="employeeId != null" >
+        #{employeeId,jdbcType=NUMERIC},
+      </if>
+      <if test="firstName != null" >
+        #{firstName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastName != null" >
+        #{lastName,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNumber != null" >
+        #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="hireDate != null" >
+        #{hireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jobId != null" >
+        #{jobId,jdbcType=VARCHAR},
+      </if>
+      <if test="salary != null" >
+        #{salary,jdbcType=NUMERIC},
+      </if>
+      <if test="commissionPct != null" >
+        #{commissionPct,jdbcType=NUMERIC},
+      </if>
+      <if test="managerId != null" >
+        #{managerId,jdbcType=NUMERIC},
+      </if>
+      <if test="departmentId != null" >
+        #{departmentId,jdbcType=NUMERIC},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="zipCode != null" >
+        #{zipCode,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="maritalStatus != null" >
+        #{maritalStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDate != null" >
+        #{birthDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nationality != null" >
+        #{nationality,jdbcType=VARCHAR},
+      </if>
+      <if test="employmentType != null" >
+        #{employmentType,jdbcType=VARCHAR},
+      </if>
+      <if test="educationLevel != null" >
+        #{educationLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="hireStatus != null" >
+        #{hireStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="workExperience != null" >
+        #{workExperience,jdbcType=NUMERIC},
+      </if>
+      <if test="shiftType != null" >
+        #{shiftType,jdbcType=VARCHAR},
+      </if>
+      <if test="emergencyContactName != null" >
+        #{emergencyContactName,jdbcType=VARCHAR},
+      </if>
+      <if test="emergencyContactPhone != null" >
+        #{emergencyContactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountNumber != null" >
+        #{bankAccountNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null" >
+        #{bankName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zhouzz.pojo.EmployeeDataExample" resultType="java.lang.Integer" >
+    select count(*) from EMPLOYEE_DATA
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update EMPLOYEE_DATA
+    <set >
+      <if test="record.employeeId != null" >
+        EMPLOYEE_ID = #{record.employeeId,jdbcType=NUMERIC},
+      </if>
+      <if test="record.firstName != null" >
+        FIRST_NAME = #{record.firstName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastName != null" >
+        LAST_NAME = #{record.lastName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null" >
+        EMAIL = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phoneNumber != null" >
+        PHONE_NUMBER = #{record.phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hireDate != null" >
+        HIRE_DATE = #{record.hireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.jobId != null" >
+        JOB_ID = #{record.jobId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salary != null" >
+        SALARY = #{record.salary,jdbcType=NUMERIC},
+      </if>
+      <if test="record.commissionPct != null" >
+        COMMISSION_PCT = #{record.commissionPct,jdbcType=NUMERIC},
+      </if>
+      <if test="record.managerId != null" >
+        MANAGER_ID = #{record.managerId,jdbcType=NUMERIC},
+      </if>
+      <if test="record.departmentId != null" >
+        DEPARTMENT_ID = #{record.departmentId,jdbcType=NUMERIC},
+      </if>
+      <if test="record.address != null" >
+        ADDRESS = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.city != null" >
+        CITY = #{record.city,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null" >
+        STATE = #{record.state,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zipCode != null" >
+        ZIP_CODE = #{record.zipCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.country != null" >
+        COUNTRY = #{record.country,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gender != null" >
+        GENDER = #{record.gender,jdbcType=VARCHAR},
+      </if>
+      <if test="record.maritalStatus != null" >
+        MARITAL_STATUS = #{record.maritalStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birthDate != null" >
+        BIRTH_DATE = #{record.birthDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.nationality != null" >
+        NATIONALITY = #{record.nationality,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employmentType != null" >
+        EMPLOYMENT_TYPE = #{record.employmentType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.educationLevel != null" >
+        EDUCATION_LEVEL = #{record.educationLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.position != null" >
+        POSITION = #{record.position,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hireStatus != null" >
+        HIRE_STATUS = #{record.hireStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.workExperience != null" >
+        WORK_EXPERIENCE = #{record.workExperience,jdbcType=NUMERIC},
+      </if>
+      <if test="record.shiftType != null" >
+        SHIFT_TYPE = #{record.shiftType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.emergencyContactName != null" >
+        EMERGENCY_CONTACT_NAME = #{record.emergencyContactName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.emergencyContactPhone != null" >
+        EMERGENCY_CONTACT_PHONE = #{record.emergencyContactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankAccountNumber != null" >
+        BANK_ACCOUNT_NUMBER = #{record.bankAccountNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankName != null" >
+        BANK_NAME = #{record.bankName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update EMPLOYEE_DATA
+    set EMPLOYEE_ID = #{record.employeeId,jdbcType=NUMERIC},
+      FIRST_NAME = #{record.firstName,jdbcType=VARCHAR},
+      LAST_NAME = #{record.lastName,jdbcType=VARCHAR},
+      EMAIL = #{record.email,jdbcType=VARCHAR},
+      PHONE_NUMBER = #{record.phoneNumber,jdbcType=VARCHAR},
+      HIRE_DATE = #{record.hireDate,jdbcType=TIMESTAMP},
+      JOB_ID = #{record.jobId,jdbcType=VARCHAR},
+      SALARY = #{record.salary,jdbcType=NUMERIC},
+      COMMISSION_PCT = #{record.commissionPct,jdbcType=NUMERIC},
+      MANAGER_ID = #{record.managerId,jdbcType=NUMERIC},
+      DEPARTMENT_ID = #{record.departmentId,jdbcType=NUMERIC},
+      ADDRESS = #{record.address,jdbcType=VARCHAR},
+      CITY = #{record.city,jdbcType=VARCHAR},
+      STATE = #{record.state,jdbcType=VARCHAR},
+      ZIP_CODE = #{record.zipCode,jdbcType=VARCHAR},
+      COUNTRY = #{record.country,jdbcType=VARCHAR},
+      GENDER = #{record.gender,jdbcType=VARCHAR},
+      MARITAL_STATUS = #{record.maritalStatus,jdbcType=VARCHAR},
+      BIRTH_DATE = #{record.birthDate,jdbcType=TIMESTAMP},
+      NATIONALITY = #{record.nationality,jdbcType=VARCHAR},
+      EMPLOYMENT_TYPE = #{record.employmentType,jdbcType=VARCHAR},
+      EDUCATION_LEVEL = #{record.educationLevel,jdbcType=VARCHAR},
+      POSITION = #{record.position,jdbcType=VARCHAR},
+      HIRE_STATUS = #{record.hireStatus,jdbcType=VARCHAR},
+      WORK_EXPERIENCE = #{record.workExperience,jdbcType=NUMERIC},
+      SHIFT_TYPE = #{record.shiftType,jdbcType=VARCHAR},
+      EMERGENCY_CONTACT_NAME = #{record.emergencyContactName,jdbcType=VARCHAR},
+      EMERGENCY_CONTACT_PHONE = #{record.emergencyContactPhone,jdbcType=VARCHAR},
+      BANK_ACCOUNT_NUMBER = #{record.bankAccountNumber,jdbcType=VARCHAR},
+      BANK_NAME = #{record.bankName,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

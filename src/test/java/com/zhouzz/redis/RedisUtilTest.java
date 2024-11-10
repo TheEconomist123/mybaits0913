@@ -97,7 +97,7 @@ public class RedisUtilTest extends BaseTest {
         list.add(classifyDemo16);
         list.add(classifyDemo17);
         for (int i = 1; i < 60000; i++) {
-            redisUtil.set("LYF_" + i, list, 10, TimeUnit.HOURS);
+            redisUtil.set("LYF_" + i, list, 5, TimeUnit.MINUTES);
         }
         System.out.println("redis数据写入成功");
         long l = System.currentTimeMillis();
