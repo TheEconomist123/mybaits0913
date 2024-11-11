@@ -87,7 +87,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from EMP
     where EMPNO = #{empno,jdbcType=NUMERIC}
@@ -103,11 +103,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.zhouzz.pojo.EmpTest">
-    insert into EMP (EMPNO, ENAME, JOB, 
-      MGR, HIREDATE, SAL, 
+    insert into EMP (EMPNO, ENAME, JOB,
+      MGR, HIREDATE, SAL,
       COMM, DEPTNO)
-    values (#{empno,jdbcType=NUMERIC}, #{ename,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, 
-      #{mgr,jdbcType=NUMERIC}, #{hiredate,jdbcType=TIMESTAMP}, #{sal,jdbcType=NUMERIC}, 
+    values (#{empno,jdbcType=NUMERIC}, #{ename,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR},
+      #{mgr,jdbcType=NUMERIC}, #{hiredate,jdbcType=TIMESTAMP}, #{sal,jdbcType=NUMERIC},
       #{comm,jdbcType=NUMERIC}, #{deptno,jdbcType=NUMERIC})
   </insert>
   <insert id="insertSelective" parameterType="com.zhouzz.pojo.EmpTest">
@@ -474,6 +474,18 @@
 
 
     </select>
+
+   <!-- 根据部门所在地查询员工信息 入参地址支持多个地址，多个地址用逗号分隔-->
+
+    <select id="selectEmpByLoc" resultType="com.zhouzz.pojo.Emp">
+     select a.*
+     from emp a, dept b
+     where a.deptno = b.deptno and b.loc in
+     <foreach collection="locs" item="loc" open="(" separator="," close=")">
+       #{loc}
+     </foreach>
+    </select>
+
 
     <!-- 根据员工号批量删除员工-->
 

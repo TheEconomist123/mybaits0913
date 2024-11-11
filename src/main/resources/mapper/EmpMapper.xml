@@ -87,7 +87,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from EMP
     where EMPNO = #{empno,jdbcType=NUMERIC}
@@ -103,11 +103,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.zhouzz.pojo.Emp" >
-    insert into EMP (EMPNO, ENAME, JOB, 
-      MGR, HIREDATE, SAL, 
+    insert into EMP (EMPNO, ENAME, JOB,
+      MGR, HIREDATE, SAL,
       COMM, DEPTNO)
-    values (#{empno,jdbcType=NUMERIC}, #{ename,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, 
-      #{mgr,jdbcType=NUMERIC}, #{hiredate,jdbcType=TIMESTAMP}, #{sal,jdbcType=NUMERIC}, 
+    values (#{empno,jdbcType=NUMERIC}, #{ename,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR},
+      #{mgr,jdbcType=NUMERIC}, #{hiredate,jdbcType=TIMESTAMP}, #{sal,jdbcType=NUMERIC},
       #{comm,jdbcType=NUMERIC}, #{deptno,jdbcType=NUMERIC})
   </insert>
   <insert id="insertSelective" parameterType="com.zhouzz.pojo.Emp" >
@@ -255,4 +255,5 @@
       DEPTNO = #{deptno,jdbcType=NUMERIC}
     where EMPNO = #{empno,jdbcType=NUMERIC}
   </update>
+
 </mapper>

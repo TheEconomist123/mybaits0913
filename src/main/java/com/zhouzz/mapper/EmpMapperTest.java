@@ -1,6 +1,7 @@
 package com.zhouzz.mapper;
 
 import com.zhouzz.pojo.Dept;
+import com.zhouzz.pojo.Emp;
 import com.zhouzz.pojo.EmpExt;
 import com.zhouzz.pojo.EmpTest;
 import org.apache.ibatis.annotations.MapKey;
@@ -68,6 +69,8 @@ public interface EmpMapperTest {
     EmpTest selectEmpAndDept3(@Param("empno") Integer empno);
 
     List<Dept> selectDeptAndEmp(@Param("deptno") Integer deptno);
+
+    List<Emp> selectEmpByLoc(@Param("locs") String[] locs);
 
     //五种入参方式的测试方法
     //第一种 只有一个入参参数  ${} #{} 里面内容可以随便输入

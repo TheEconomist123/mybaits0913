@@ -1,7 +1,10 @@
 package com.zhouzz.mybatis;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.zhouzz.BaseTest;
 import com.zhouzz.pojo.Dept;
+import com.zhouzz.pojo.Emp;
 import com.zhouzz.pojo.EmpExt;
 import com.zhouzz.pojo.EmpTest;
 import org.junit.jupiter.api.Test;
@@ -150,6 +153,20 @@ public class MybatisSelect extends BaseTest {
           System.out.println(dept1.getDeptno() + " " + dept1.getDname() + " " + dept1.getLoc());
          dept1.getEmps().forEach(emp -> System.out.println(emp.getEmpno() + " " + emp.getEname()));
         }
+
+    }
+
+    //关联查询，根据部门所在地查询员工信息，返回emp对象，入参是单个地址或者多个地址
+    @Test
+    public void testSelectEmpByLoc() {
+        String[] locs = {"NEW YORK", "DALLAS"};
+        //加入分页
+        int pageNum = 1;
+        int pageSize = 3;
+        PageHelper.startPage(pageNum, pageSize);
+        List<Emp> emps = empMapperTest.selectEmpByLoc(locs);
+        PageInfo<Emp> empPageInfo = new PageInfo<>(emps);
+        System.out.println("分页查询结果：" + empPageInfo);
 
     }
 
