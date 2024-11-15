@@ -6,6 +6,7 @@ import com.github.pagehelper.PageInfo;
 import com.zhouzz.common.CommonResult;
 import com.zhouzz.mapper.EmpMapper;
 
+import com.zhouzz.mapper.EmpMapperTest;
 import com.zhouzz.mapper.EmployeeDataMapper;
 import com.zhouzz.pojo.Emp;
 import com.zhouzz.pojo.EmployeeData;
@@ -36,6 +37,9 @@ public class EmpController {
 
     @Autowired
     private AsyncService asyncService;
+
+    @Autowired
+    private EmpMapperTest empMapperTest;
 
     @RequestMapping("/list")
     public CommonResult getEmpList(@RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize,
@@ -106,8 +110,20 @@ public class EmpController {
         return commonResult;
     }
 
+    //写一个根据部门所在Location获取员工的接口
+    @RequestMapping("/getEmpListByCity")
+    public CommonResult getEmpListByCity(@RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize,
+                                         @RequestParam(value = "pageNo", defaultValue = "1") Integer pageNo) {
+        CommonResult commonResult = new CommonResult();
+        commonResult.setCode("000000");
+        commonResult.setMsg("success");
+        PageHelper.startPage(pageNo, pageSize);
+        String[] locs = {"NEW YORK", "DALLAS"};
+        List<Emp> emps = empMapperTest.selectEmpByLoc(locs);
+        commonResult.setData(new PageInfo<Emp>(emps));
+        return commonResult;
 
-
+    }
 
 
 }

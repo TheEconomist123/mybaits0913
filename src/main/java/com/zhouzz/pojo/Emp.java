@@ -20,6 +20,51 @@ public class Emp {
 
     private Integer deptno;
 
+    private String reserver1;
+    private String reserver2;
+    private String reserver3;
+    private String reserver4;
+
+    public String getReserver1() {
+        return reserver1;
+    }
+
+    public void setReserver1(String reserver1) {
+        this.reserver1 = reserver1;
+    }
+
+    public String getReserver2() {
+        return reserver2;
+    }
+
+    public void setReserver2(String reserver2) {
+        this.reserver2 = reserver2;
+    }
+
+    public String getReserver3() {
+        return reserver3;
+    }
+
+    public void setReserver3(String reserver3) {
+        this.reserver3 = reserver3;
+    }
+
+    public String getReserver4() {
+        return reserver4;
+    }
+
+    public void setReserver4(String reserver4) {
+        this.reserver4 = reserver4;
+    }
+
+    public Emp() {
+    }
+
+    public Emp(Integer empno, String ename) {
+        this.empno = empno;
+        this.ename = ename;
+    }
+
     public Integer getEmpno() {
         return empno;
     }
@@ -95,6 +140,10 @@ public class Emp {
                 ", sal=" + sal +
                 ", comm=" + comm +
                 ", deptno=" + deptno +
+                ", reserver1='" + reserver1 + '\'' +
+                ", reserver2='" + reserver2 + '\'' +
+                ", reserver3='" + reserver3 + '\'' +
+                ", reserver4='" + reserver4 + '\'' +
                 '}';
     }
 }
