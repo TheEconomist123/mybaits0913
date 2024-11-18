@@ -14,7 +14,7 @@ spring:
     #用户名
     username: ZHOU
     #密码
-    password: C##ZHOU
+    password: ZHOU
 
 
 #mybatis配置 在控制台打印日志

@@ -23,8 +23,8 @@
         </jdbcConnection>-->
         <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
                         connectionURL="jdbc:oracle:thin:@localhost:1521:orcl"
-                        userId="C##ZHOU"
-                        password="C##ZHOU">
+                        userId="ZHOU"
+                        password="ZHOU">
         </jdbcConnection>
         <!-- javaBean的生成策略-->
         <javaModelGenerator targetPackage="com.zhouzz.pojo" targetProject=".\src\main\java">
