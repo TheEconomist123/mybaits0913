@@ -12,8 +12,9 @@
     <context id="DB2Tables" targetRuntime="MyBatis3">
            <!--去除生成文件中的注释-->
             <commentGenerator>
-                <property name="suppressDate" value="true"/>
-                <property name="suppressAllComments" value="true" />
+                <property name="suppressDate" value="true"/> <!--生成的注释中不包含时间戳-->
+                <property name="suppressAllComments" value="true" /> <!--禁用生成注释-->
+                <property name="addRemarkComments" value="false" /> <!--禁用添加字段注释-->
             </commentGenerator>
         <!-- 数据库的连接信息 -->
        <!-- <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"

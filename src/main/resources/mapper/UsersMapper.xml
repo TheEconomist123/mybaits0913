@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhouzz.mapper.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.zhouzz.pojo.Users">
+    <id column="ID" jdbcType="NUMERIC" property="id" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="DATE_OF_BIRTH" jdbcType="TIMESTAMP" property="dateOfBirth" />
+    <result column="GENDER" jdbcType="CHAR" property="gender" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="LAST_LOGIN" jdbcType="TIMESTAMP" property="lastLogin" />
+    <result column="CREATED_AT" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="UPDATED_AT" jdbcType="TIMESTAMP" property="updatedAt" />
+    <result column="DELETED_AT" jdbcType="TIMESTAMP" property="deletedAt" />
+    <result column="PRICE" jdbcType="NUMERIC" property="price" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zhouzz.pojo.Users">
+    <result column="PROFILE_PICTURE" jdbcType="BLOB" property="profilePicture" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, USERNAME, PASSWORD, EMAIL, PHONE, DATE_OF_BIRTH, GENDER, STATUS, ADDRESS, LAST_LOGIN, 
+    CREATED_AT, UPDATED_AT, DELETED_AT, PRICE
+  </sql>
+  <sql id="Blob_Column_List">
+    PROFILE_PICTURE
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.zhouzz.pojo.UsersExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from USERS
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.zhouzz.pojo.UsersExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from USERS
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from USERS
+    where ID = #{id,jdbcType=NUMERIC}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from USERS
+    where ID = #{id,jdbcType=NUMERIC}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zhouzz.pojo.UsersExample">
+    delete from USERS
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+
+  <insert id="insert" parameterType="com.zhouzz.pojo.Users" >
+   <selectKey resultType="java.lang.Long" keyProperty="id" order="BEFORE">
+     select user_seq.nextval from dual
+    </selectKey>
+
+    insert into USERS (id, USERNAME, PASSWORD,
+      EMAIL, PHONE, DATE_OF_BIRTH, 
+      GENDER, STATUS, ADDRESS, 
+      LAST_LOGIN, CREATED_AT, UPDATED_AT, 
+      DELETED_AT, PRICE, PROFILE_PICTURE
+      )
+    values (#{id,jdbcType=NUMERIC}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+      #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{dateOfBirth,jdbcType=TIMESTAMP}, 
+      #{gender,jdbcType=CHAR}, #{status,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{lastLogin,jdbcType=TIMESTAMP}, #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP}, 
+      #{deletedAt,jdbcType=TIMESTAMP}, #{price,jdbcType=NUMERIC}, #{profilePicture,jdbcType=BLOB}
+      )
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.zhouzz.pojo.Users">
+   <selectKey resultType="java.lang.Long" keyProperty="id" order="BEFORE">
+     select user_seq.nextval from dual
+    </selectKey>
+    insert into USERS
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="email != null">
+        EMAIL,
+      </if>
+      <if test="phone != null">
+        PHONE,
+      </if>
+      <if test="dateOfBirth != null">
+        DATE_OF_BIRTH,
+      </if>
+      <if test="gender != null">
+        GENDER,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="address != null">
+        ADDRESS,
+      </if>
+      <if test="lastLogin != null">
+        LAST_LOGIN,
+      </if>
+      <if test="createdAt != null">
+        CREATED_AT,
+      </if>
+      <if test="updatedAt != null">
+        UPDATED_AT,
+      </if>
+      <if test="deletedAt != null">
+        DELETED_AT,
+      </if>
+      <if test="price != null">
+        PRICE,
+      </if>
+      <if test="profilePicture != null">
+        PROFILE_PICTURE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=NUMERIC},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="dateOfBirth != null">
+        #{dateOfBirth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=CHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLogin != null">
+        #{lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdAt != null">
+        #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null">
+        #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deletedAt != null">
+        #{deletedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=NUMERIC},
+      </if>
+      <if test="profilePicture != null">
+        #{profilePicture,jdbcType=BLOB},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zhouzz.pojo.UsersExample" resultType="java.lang.Long">
+    select count(*) from USERS
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update USERS
+    <set>
+      <if test="row.id != null">
+        ID = #{row.id,jdbcType=NUMERIC},
+      </if>
+      <if test="row.username != null">
+        USERNAME = #{row.username,jdbcType=VARCHAR},
+      </if>
+      <if test="row.password != null">
+        PASSWORD = #{row.password,jdbcType=VARCHAR},
+      </if>
+      <if test="row.email != null">
+        EMAIL = #{row.email,jdbcType=VARCHAR},
+      </if>
+      <if test="row.phone != null">
+        PHONE = #{row.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="row.dateOfBirth != null">
+        DATE_OF_BIRTH = #{row.dateOfBirth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.gender != null">
+        GENDER = #{row.gender,jdbcType=CHAR},
+      </if>
+      <if test="row.status != null">
+        STATUS = #{row.status,jdbcType=VARCHAR},
+      </if>
+      <if test="row.address != null">
+        ADDRESS = #{row.address,jdbcType=VARCHAR},
+      </if>
+      <if test="row.lastLogin != null">
+        LAST_LOGIN = #{row.lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.createdAt != null">
+        CREATED_AT = #{row.createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.updatedAt != null">
+        UPDATED_AT = #{row.updatedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.deletedAt != null">
+        DELETED_AT = #{row.deletedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.price != null">
+        PRICE = #{row.price,jdbcType=NUMERIC},
+      </if>
+      <if test="row.profilePicture != null">
+        PROFILE_PICTURE = #{row.profilePicture,jdbcType=BLOB},
+      </if>
+    </set>
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update USERS
+    set ID = #{row.id,jdbcType=NUMERIC},
+      USERNAME = #{row.username,jdbcType=VARCHAR},
+      PASSWORD = #{row.password,jdbcType=VARCHAR},
+      EMAIL = #{row.email,jdbcType=VARCHAR},
+      PHONE = #{row.phone,jdbcType=VARCHAR},
+      DATE_OF_BIRTH = #{row.dateOfBirth,jdbcType=TIMESTAMP},
+      GENDER = #{row.gender,jdbcType=CHAR},
+      STATUS = #{row.status,jdbcType=VARCHAR},
+      ADDRESS = #{row.address,jdbcType=VARCHAR},
+      LAST_LOGIN = #{row.lastLogin,jdbcType=TIMESTAMP},
+      CREATED_AT = #{row.createdAt,jdbcType=TIMESTAMP},
+      UPDATED_AT = #{row.updatedAt,jdbcType=TIMESTAMP},
+      DELETED_AT = #{row.deletedAt,jdbcType=TIMESTAMP},
+      PRICE = #{row.price,jdbcType=NUMERIC},
+      PROFILE_PICTURE = #{row.profilePicture,jdbcType=BLOB}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update USERS
+    set ID = #{row.id,jdbcType=NUMERIC},
+      USERNAME = #{row.username,jdbcType=VARCHAR},
+      PASSWORD = #{row.password,jdbcType=VARCHAR},
+      EMAIL = #{row.email,jdbcType=VARCHAR},
+      PHONE = #{row.phone,jdbcType=VARCHAR},
+      DATE_OF_BIRTH = #{row.dateOfBirth,jdbcType=TIMESTAMP},
+      GENDER = #{row.gender,jdbcType=CHAR},
+      STATUS = #{row.status,jdbcType=VARCHAR},
+      ADDRESS = #{row.address,jdbcType=VARCHAR},
+      LAST_LOGIN = #{row.lastLogin,jdbcType=TIMESTAMP},
+      CREATED_AT = #{row.createdAt,jdbcType=TIMESTAMP},
+      UPDATED_AT = #{row.updatedAt,jdbcType=TIMESTAMP},
+      DELETED_AT = #{row.deletedAt,jdbcType=TIMESTAMP},
+      PRICE = #{row.price,jdbcType=NUMERIC}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhouzz.pojo.Users">
+    update USERS
+    <set>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="dateOfBirth != null">
+        DATE_OF_BIRTH = #{dateOfBirth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gender != null">
+        GENDER = #{gender,jdbcType=CHAR},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLogin != null">
+        LAST_LOGIN = #{lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdAt != null">
+        CREATED_AT = #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null">
+        UPDATED_AT = #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deletedAt != null">
+        DELETED_AT = #{deletedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="price != null">
+        PRICE = #{price,jdbcType=NUMERIC},
+      </if>
+      <if test="profilePicture != null">
+        PROFILE_PICTURE = #{profilePicture,jdbcType=BLOB},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=NUMERIC}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zhouzz.pojo.Users">
+    update USERS
+    set USERNAME = #{username,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      DATE_OF_BIRTH = #{dateOfBirth,jdbcType=TIMESTAMP},
+      GENDER = #{gender,jdbcType=CHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      LAST_LOGIN = #{lastLogin,jdbcType=TIMESTAMP},
+      CREATED_AT = #{createdAt,jdbcType=TIMESTAMP},
+      UPDATED_AT = #{updatedAt,jdbcType=TIMESTAMP},
+      DELETED_AT = #{deletedAt,jdbcType=TIMESTAMP},
+      PRICE = #{price,jdbcType=NUMERIC},
+      PROFILE_PICTURE = #{profilePicture,jdbcType=BLOB}
+    where ID = #{id,jdbcType=NUMERIC}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhouzz.pojo.Users">
+    update USERS
+    set USERNAME = #{username,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      DATE_OF_BIRTH = #{dateOfBirth,jdbcType=TIMESTAMP},
+      GENDER = #{gender,jdbcType=CHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      LAST_LOGIN = #{lastLogin,jdbcType=TIMESTAMP},
+      CREATED_AT = #{createdAt,jdbcType=TIMESTAMP},
+      UPDATED_AT = #{updatedAt,jdbcType=TIMESTAMP},
+      DELETED_AT = #{deletedAt,jdbcType=TIMESTAMP},
+      PRICE = #{price,jdbcType=NUMERIC}
+    where ID = #{id,jdbcType=NUMERIC}
+  </update>
+
+  <!--插入用户 主键为oracle 中的sequence，需要在数据库中执行以下语句 如何数据库是自动生成的，想获取主键 需要在insert标签中设置useGeneratedKeys="true" keyProperty="id"-->
+  <insert id="insertWithSequence" useGeneratedKeys="true" keyProperty="id" parameterType="com.zhouzz.pojo.Users">
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="BEFORE">
+      SELECT USER_SEQ.nextval FROM DUAL
+    </selectKey>
+    insert into USERS (id, USERNAME, PASSWORD,
+      EMAIL, PHONE, DATE_OF_BIRTH,
+      GENDER, STATUS, ADDRESS,
+      LAST_LOGIN, CREATED_AT, UPDATED_AT,
+      DELETED_AT, PRICE, PROFILE_PICTURE
+      )
+    values (#{id,jdbcType=NUMERIC}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+      #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{dateOfBirth,jdbcType=TIMESTAMP},
+      #{gender,jdbcType=CHAR}, #{status,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
+      #{lastLogin,jdbcType=TIMESTAMP}, #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP},
+      #{deletedAt,jdbcType=TIMESTAMP}, #{price,jdbcType=NUMERIC}, #{profilePicture,jdbcType=BLOB}
+      )
+  </insert>
+
+
+</mapper>

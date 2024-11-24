@@ -34,5 +34,8 @@ public class BaseTest {
 
     @Autowired
     protected MenuMapper menuMapper;
+    @Autowired
+    protected UsersMapper usersMapper;
+
 
 }
