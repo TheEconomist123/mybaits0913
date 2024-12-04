@@ -47,7 +47,7 @@
 <!--
         <table tableName="huisbank_green_credit" domainObjectName="HuisbankGreenCredit"/>
 -->
-        <table tableName="HUISBANK_CUST_ASSET_STATISTICS" domainObjectName="HuisbankCustAssetStatistics"/>
+        <table tableName="teacher" domainObjectName="Teacher"/>
        <!-- <table tableName="t_dept" domainObjectName="Dept"/>-->
     </context>
 

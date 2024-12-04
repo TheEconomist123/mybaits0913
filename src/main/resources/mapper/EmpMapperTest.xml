@@ -477,7 +477,7 @@
 
    <!-- 根据部门所在地查询员工信息 入参地址支持多个地址，多个地址用逗号分隔-->
 
-    <select id="selectEmpByLoc" resultType="com.zhouzz.pojo.Emp">
+    <select id="selectEmpByLocs" resultType="com.zhouzz.pojo.Emp">
      select
          a.empno,
          a.ename,
@@ -494,6 +494,12 @@
      <foreach collection="locs" item="loc" open="(" separator="," close=")">
        #{loc}
      </foreach>
+    </select>
+    <select id="selectEmpByLoc" resultType="com.zhouzz.pojo.Emp">
+        select a.*
+        from emp a, dept b
+        where a.deptno = b.deptno and b.loc = #{loc}
+
     </select>
 
 

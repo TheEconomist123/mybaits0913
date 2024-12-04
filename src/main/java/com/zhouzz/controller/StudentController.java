@@ -4,6 +4,7 @@ import com.zhouzz.common.CommonResult;
 import com.zhouzz.mapper.StudentMapper;
 import com.zhouzz.pojo.Student;
 import com.zhouzz.pojo.StudentExample;
+import com.zhouzz.service.StudentService;
 import com.zhouzz.utils.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,9 @@ public class StudentController {
     @Autowired
     private RedisUtil redisUtil;
 
+    @Autowired
+    private StudentService studentService;
+
     //根据id查询学生信息
     @RequestMapping("/getStudentById")
     public CommonResult getStudentById(@RequestParam Long id) {
@@ -51,7 +55,7 @@ public class StudentController {
             StudentExample studentExample = new StudentExample();
             studentExample.createCriteria().andIdEqualTo(id);
             students2 = studentMapper.selectByExample(studentExample);
-            redisUtil.set(id.toString(), students2,20, TimeUnit.SECONDS);
+            redisUtil.set(id.toString(), students2, 20, TimeUnit.SECONDS);
             return new CommonResult("000000", "success", students2);
         } else {
             System.out.println("从缓存中获取数据");
@@ -65,14 +69,27 @@ public class StudentController {
     @RequestMapping("/hello")
     public CommonResult hello() {
         System.out.println(" hello 请求数据来了...............");
-       //睡眠1秒
+        //睡眠1秒
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        return new CommonResult("000000", "success", "hello world"+System.currentTimeMillis());
+        return new CommonResult("000000", "success", "hello world" + System.currentTimeMillis());
+
+    }
+
+    //写一个测试事务的方法
+    @RequestMapping("/testTransaction")
+    public CommonResult testTransaction() {
+
+        try {
+            studentService.testTransaction();
+        } catch (Exception e) {
+            return new CommonResult("99999", "error", e.getMessage());
+        }
+        return new CommonResult("000000", "success", "事务开启成功");
 
     }
 }

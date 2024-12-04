@@ -70,7 +70,9 @@ public interface EmpMapperTest {
 
     List<Dept> selectDeptAndEmp(@Param("deptno") Integer deptno);
 
-    List<Emp> selectEmpByLoc(@Param("locs") String[] locs);
+    List<Emp> selectEmpByLocs(@Param("locs") String[] locs);
+
+    List<Emp> selectEmpByLoc(String loc);
 
     //五种入参方式的测试方法
     //第一种 只有一个入参参数  ${} #{} 里面内容可以随便输入

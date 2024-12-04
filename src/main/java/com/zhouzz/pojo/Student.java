@@ -22,6 +22,20 @@ public class Student {
     private String reserve2;
 
     private String reserve3;
+    private int  reserve4;
+
+    public int getReserve4() {
+        return reserve4;
+    }
+
+    public void setReserve4(int reserve4) {
+        this.reserve4 = reserve4;
+    }
+
+    public Student() {
+    }
+
+
 
     public Long getId() {
         return id;

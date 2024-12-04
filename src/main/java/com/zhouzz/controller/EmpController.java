@@ -8,11 +8,14 @@ import com.zhouzz.mapper.EmpMapper;
 
 import com.zhouzz.mapper.EmpMapperTest;
 import com.zhouzz.mapper.EmployeeDataMapper;
+import com.zhouzz.mapper.StudentMapper;
 import com.zhouzz.pojo.Emp;
 import com.zhouzz.pojo.EmployeeData;
 import com.zhouzz.pojo.RequestUserParam;
+import com.zhouzz.pojo.Student;
 import com.zhouzz.service.AsyncService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -40,6 +43,10 @@ public class EmpController {
 
     @Autowired
     private EmpMapperTest empMapperTest;
+
+    @Autowired
+    private StudentMapper studentMapper;
+
 
     @RequestMapping("/list")
     public CommonResult getEmpList(@RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize,
@@ -119,7 +126,7 @@ public class EmpController {
         commonResult.setMsg("success");
         PageHelper.startPage(pageNo, pageSize);
         String[] locs = {"NEW YORK", "DALLAS"};
-        List<Emp> emps = empMapperTest.selectEmpByLoc(locs);
+        List<Emp> emps = empMapperTest.selectEmpByLocs(locs);
         commonResult.setData(new PageInfo<Emp>(emps));
         return commonResult;
 

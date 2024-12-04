@@ -171,6 +171,14 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+
+  <select id="seleceByEmpName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select * from EMP where  1=1
+      <if test="ename != null and ename != ''">
+      and  ENAME  like   '%${ename}%'
+      </if>
+
+  </select>
   <update id="updateByExampleSelective" parameterType="map" >
     update EMP
     <set >
@@ -255,5 +263,7 @@
       DEPTNO = #{deptno,jdbcType=NUMERIC}
     where EMPNO = #{empno,jdbcType=NUMERIC}
   </update>
+
+
 
 </mapper>

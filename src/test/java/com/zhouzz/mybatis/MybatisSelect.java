@@ -158,17 +158,27 @@ public class MybatisSelect extends BaseTest {
 
     //关联查询，根据部门所在地查询员工信息，返回emp对象，入参是单个地址或者多个地址
     @Test
-    public void testSelectEmpByLoc() {
+    public void testSelectEmpByLocs() {
         String[] locs = {"NEW YORK", "DALLAS"};
+
         //加入分页
         int pageNum = 1;
         int pageSize = 3;
         PageHelper.startPage(pageNum, pageSize);
-        List<Emp> emps = empMapperTest.selectEmpByLoc(locs);
+        List<Emp> emps = empMapperTest.selectEmpByLocs(locs);
         PageInfo<Emp> empPageInfo = new PageInfo<>(emps);
         System.out.println("分页查询结果：" + empPageInfo);
 
     }
+    //关联查询，根据部门所在地查询员工信息，返回emp对象，入参是单个地址
+    @Test
+    public void testSelectEmpByLoc() {
+        String loc = "NEW YORK";
+        List<Emp> emps = empMapperTest.selectEmpByLoc(loc);
+        System.out.println("查询结果：" + emps);
+
+        }
+
 
 
 }

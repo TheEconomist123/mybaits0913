@@ -7,6 +7,7 @@ import com.zhouzz.pojo.EmpTest;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLOutput;
+import java.util.List;
 
 /**
  * @author zzz
@@ -33,6 +34,16 @@ public class MyBatisEmp  extends BaseTest {
 
         System.out.println("i = " + i);
 
+
+    }
+
+    //根据员工名称模糊查询员工信息
+    @Test
+    public void testSelectByEmpName() {
+        String empName = "M";
+        List<Emp> emps = empMapper.seleceByEmpName(empName);
+
+        System.out.println("emps = " + emps);
 
     }
 }

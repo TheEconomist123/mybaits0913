@@ -28,4 +28,5 @@ public interface EmpMapper {
 
     int updateByPrimaryKey(Emp record);
 
+    List<Emp> seleceByEmpName(String ename);
 }

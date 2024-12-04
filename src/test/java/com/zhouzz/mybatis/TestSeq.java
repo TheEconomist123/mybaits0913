@@ -1,9 +1,11 @@
 package com.zhouzz.mybatis;
 
-import com.sun.jdi.PathSearchingVirtualMachine;
+
 import com.zhouzz.BaseTest;
 import com.zhouzz.pojo.Testtableby;
+import com.zhouzz.util.SnowflakeIdGenerator;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
 
@@ -14,6 +16,9 @@ import java.util.Date;
  * @desc
  */
 public class TestSeq  extends BaseTest {
+
+    @Autowired
+    private SnowflakeIdGenerator snowflakeIdGenerator;
 
 
 
@@ -36,5 +41,16 @@ public class TestSeq  extends BaseTest {
         System.out.println("耗时：" + (System.currentTimeMillis() - l) + "毫秒");
     }
 
+
+    //测试生成主键方法
+    @Test
+    public void testSeq2() {
+
+        for (int i = 0; i < 1000; i++) {
+            System.out.println("snowflakeIdGenerator.nextId() = " + snowflakeIdGenerator.nextId());
+        }
+
+
+    }
 
 }
