@@ -11,9 +11,10 @@
     -->
     <context id="DB2Tables" targetRuntime="MyBatis3">
            <!--去除生成文件中的注释-->
-            <commentGenerator>
+            <commentGenerator type="com.zhouzz.config.CustomCommentGenerator">
                 <property name="suppressDate" value="true"/>
-                <property name="suppressAllComments" value="true" />
+                <property name="suppressAllComments" value="false" />
+                <property name="addRemarkComments" value="true" />
             </commentGenerator>
         <!-- 数据库的连接信息 -->
        <!-- <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
@@ -25,12 +26,14 @@
                         connectionURL="jdbc:oracle:thin:@localhost:1521:orcl"
                         userId="C##ZHOU"
                         password="C##ZHOU">
+            <property name="remarksReporting" value="true" />
         </jdbcConnection>
         <!-- javaBean的生成策略-->
         <javaModelGenerator targetPackage="com.zhouzz.pojo" targetProject=".\src\main\java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
+
         <!-- SQL映射文件的生成策略 -->
         <sqlMapGenerator targetPackage="mapper"
                          targetProject=".\src\main\resources">
