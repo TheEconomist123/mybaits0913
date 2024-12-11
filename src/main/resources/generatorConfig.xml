@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!-- 配置数据库连接 -->
+    <context id="OracleTables" targetRuntime="MyBatis3">
+        <!-- 启用注释生成 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>  <!-- 启用所有注释 -->
+            <property name="addRemarkComments" value="true"/>      <!-- 启用字段备注 -->
+            <property name="suppressDate" value="true"/>           <!-- 不生成时间戳 -->
+        </commentGenerator>
+
+        <!-- 数据库连接配置 -->
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@localhost:1521:orcl"
+                        userId="ZHOU"
+                        password="ZHOU">
+            <!-- 设置 useInformationSchema 为 true，读取表和字段备注 -->
+            <property name="useInformationSchema" value="true"/>
+        </jdbcConnection>
+
+        <!-- Java 类型映射配置 -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 生成实体类的路径 -->
+        <javaModelGenerator targetPackage="com.zhouzz.pojo" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- 生成 SQLMap 文件的路径 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- 生成 Java Mapper 接口的路径 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zhouzz.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 配置表 -->
+        <table tableName="Users" domainObjectName="Users">
+            <!-- 主键生成策略使用序列 -->
+            <!--<generatedKey column="id" sqlStatement="Oracle" identity="true"  />-->
+        </table>
+
+    </context>
+</generatorConfiguration>
