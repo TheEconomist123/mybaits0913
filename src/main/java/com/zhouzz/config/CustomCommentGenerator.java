@@ -2,14 +2,13 @@ package com.zhouzz.config;
 
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
-import org.mybatis.generator.api.dom.java.CompilationUnit;
-import org.mybatis.generator.api.dom.java.Field;
-import org.mybatis.generator.api.dom.java.JavaElement;
-import org.mybatis.generator.api.dom.java.Method;
+import org.mybatis.generator.api.dom.java.*;
 import org.mybatis.generator.api.dom.kotlin.KotlinFile;
 import org.mybatis.generator.api.dom.kotlin.KotlinType;
 import org.mybatis.generator.api.dom.xml.XmlElement;
 import org.mybatis.generator.internal.DefaultCommentGenerator;
+
+import java.util.Set;
 
 /**
  * @author zzz
@@ -66,6 +65,28 @@ public class CustomCommentGenerator extends DefaultCommentGenerator {
     //xml注释去掉
     @Override
     public void addComment(XmlElement xmlElement) {
+        //
+    }
+
+    @Override
+    public void addClassComment(InnerClass innerClass, IntrospectedTable introspectedTable) {
+        //
+    }
+
+    @Override
+    public void addGeneralMethodAnnotation(Method method, IntrospectedTable introspectedTable, Set<FullyQualifiedJavaType> imports) {
+        //
+    }
+
+
+
+    @Override
+    public void addGeneralMethodComment(Method method, IntrospectedTable introspectedTable) {
+        //
+    }
+
+    @Override
+    public void addClassAnnotation(InnerClass innerClass, IntrospectedTable introspectedTable, Set<FullyQualifiedJavaType> imports) {
         //
     }
 }
