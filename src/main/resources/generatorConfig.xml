@@ -49,12 +49,8 @@
         <!-- tableName设置为*号，可以对应所有表，此时不写domainObjectName -->
         <!-- domainObjectName属性指定生成出来的实体类的类名 -->
 
-        <table tableName="product" domainObjectName="Product"
-               enableInsert="true"
-               enableSelectByPrimaryKey="true"
-               enableSelectByExample="true"
-               enableUpdateByPrimaryKey="true"
-               enableDeleteByPrimaryKey="true" />
+        <table tableName="product" domainObjectName="Product"/>
+
 
     </context>
 

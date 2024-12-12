@@ -35,4 +35,7 @@ public class BaseTest {
     @Autowired
     protected MenuMapper menuMapper;
 
+    @Autowired
+    protected ProductMapper productMapper;
+
 }
