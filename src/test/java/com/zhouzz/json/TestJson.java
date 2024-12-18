@@ -1,7 +1,7 @@
 package com.zhouzz.json;
 
-import com.alibaba.fastjson2.JSON;
-import com.alibaba.fastjson2.JSONObject;
+
+import com.alibaba.fastjson.JSONObject;
 import com.zhouzz.BaseTest;
 import com.zhouzz.pojo.Student;
 import org.junit.jupiter.api.Test;

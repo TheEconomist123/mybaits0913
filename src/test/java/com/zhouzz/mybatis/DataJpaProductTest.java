@@ -1,6 +1,7 @@
 package com.zhouzz.mybatis;
 
 import com.zhouzz.BaseTest;
+import com.zhouzz.pojo.PendCountDto;
 import com.zhouzz.pojo.Product;
 import org.junit.jupiter.api.Test;
 
@@ -64,6 +65,13 @@ public class DataJpaProductTest extends BaseTest {
         product.setUpdatedAt(LocalDateTime.now());
         int i = productMapper.updateProduct(product);
         System.out.println("更新数据的个数：" + i);
+    }
+    //写一个统计查询
+    @Test
+    public void testCountProduct() {
+        String  job="CLERK";
+       PendCountDto pendCountDto = productMapper.queryPendingCount(job);
+        System.out.println("产品总数：" + pendCountDto);
     }
 
 

@@ -91,10 +91,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.zhouzz.pojo.Product">
-    insert into PRODUCT (PRODUCT_ID, PRODUCT_NAME, DESCRIPTION, 
+    insert into PRODUCT (PRODUCT_ID, PRODUCT_NAME, DESCRIPTION,
       CREATED_AT, UPDATED_AT, IS_ACTIVE
       )
-    values (#{productId,jdbcType=NUMERIC}, #{productName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+    values (#{productId,jdbcType=NUMERIC}, #{productName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},
       #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP}, #{isActive,jdbcType=CHAR}
       )
   </insert>
@@ -146,6 +146,16 @@
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
+  </select>
+  <select id="queryPendingCount" resultType="com.zhouzz.pojo.PendCountDto">
+
+    SELECT
+      COUNT(CASE WHEN a.trans_no in (10,20) THEN 1 END) AS a1,
+      COUNT(CASE WHEN a.trans_no in (30) THEN 1 END) AS a3,--测试数据3
+      COUNT(CASE WHEN a.trans_no in (40) THEN 1 END) AS a4,
+      COUNT(CASE WHEN a.trans_no in (50) THEN 1 END) AS a5
+    FROM TRANS_INFO a  where   TO_DATE(a.due_dt, 'YYYYMMDD')  &gt; SYSDATE  and  a.job=#{job}
+
   </select>
   <update id="updateByExampleSelective" parameterType="map">
     update PRODUCT

@@ -1,5 +1,6 @@
 package com.zhouzz.redis;
 
+import com.alibaba.fastjson.JSON;
 import com.zhouzz.BaseTest;
 import com.zhouzz.pojo.ClassifyDemo;
 import com.zhouzz.pojo.Student;
@@ -44,6 +45,21 @@ public class RedisUtilTest extends BaseTest {
         System.out.println(value);
 
     }
+    //向redis里面存储是一个对象 然后再取出来
+    @Test
+    public void testObj() {
+        Student student = new Student();
+        student.setId(10001L);
+        student.setName("张三3242");
+        student.setAge("20");
+        String studentJsonStr = JSON.toJSONString(student);
+        redisUtil.set("student", studentJsonStr);
+        Object student1 = redisUtil.get("student");
+
+        Student student2 = JSON.parseObject(student1.toString(),Student.class );
+         System.out.println(student2.getName());
+
+    }
 
     //测试将list存入redis
     @Test
@@ -54,6 +70,27 @@ public class RedisUtilTest extends BaseTest {
         System.out.println(students2);
 
     }
+
+    //测试存储list集合然后再取值
+    @Test
+    public void testList0() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student(10001L, "张三3242", "20", "男");
+        Student s2 = new Student(2000l, "李四3242", "21", "男");
+        Student s3 = new Student(10003L, "王五3242", "22", "男");
+        list.add(s1);
+        list.add(s2);
+        list.add(s3);
+        String jsonString = JSON.toJSONString(list);
+        redisUtil.set("list", jsonString);
+        List<Student> list2 = JSON.parseArray(jsonString, Student.class);
+        for (Student student : list2) {
+            System.out.println("student = " + student);
+        }
+
+    }
+    //测试存储矢实体类然后
+
 
     //向redis数据中放入5万条数据，key 从10000000 开始 ，对应的值是 List<ClassifyDemo>
     @Test

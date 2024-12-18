@@ -496,7 +496,17 @@
      </foreach>
     </select>
     <select id="selectEmpByLoc" resultType="com.zhouzz.pojo.Emp">
-        select a.*
+
+        select a.empno, --员工编号
+               a.ename,--员工姓名
+               a.job,--工作
+               a.mgr,
+               a.hiredate,
+               a.sal,
+               a.comm,
+               b.deptno as reserver1,
+               b.dname as reserver2,
+               b.loc as reserver3
         from emp a, dept b
         where a.deptno = b.deptno and b.loc = #{loc}
 

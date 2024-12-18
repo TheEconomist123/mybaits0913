@@ -36,6 +36,12 @@ public class Student {
     }
 
 
+    public Student(Long id, String name, String age, String sex) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
 
     public Long getId() {
         return id;

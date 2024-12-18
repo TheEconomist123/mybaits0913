@@ -1,5 +1,6 @@
 package com.zhouzz.mapper;
 
+import com.zhouzz.pojo.PendCountDto;
 import com.zhouzz.pojo.Product;
 import org.apache.ibatis.annotations.*;
 
@@ -30,9 +31,5 @@ public interface ProductMapper  {
     List<Product> selectProductByName(String productName);
 
 
-
-
-
-
-
+    PendCountDto queryPendingCount(String job);
 }
