@@ -232,6 +232,7 @@
     </if>
   </update>
 
+  <!--一次性传输list集合参数，批量查询学生id-->
   <select id="batchGetStudentIds" parameterType="java.util.List" resultType="java.lang.String">
     SELECT id
     FROM student
