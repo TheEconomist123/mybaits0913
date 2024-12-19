@@ -231,4 +231,31 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
+
+  <select id="batchGetStudentIds" parameterType="java.util.List" resultType="java.lang.String">
+    SELECT id
+    FROM student
+    WHERE
+    <if test="list != null and list.size() > 0">
+      <if test="list[0].name != null">
+        name IN
+        <foreach collection="list" item="student" open="(" separator="," close=")">
+          #{student.name}
+        </foreach>
+      </if>
+      <if test="list[0].age != null">
+        AND age IN
+        <foreach collection="list" item="student" open="(" separator="," close=")">
+          #{student.age}
+        </foreach>
+      </if>
+      <if test="list[0].sex != null">
+        AND sex IN
+        <foreach collection="list" item="student" open="(" separator="," close=")">
+          #{student.sex}
+        </foreach>
+      </if>
+    </if>
+  </select>
+
 </mapper>
