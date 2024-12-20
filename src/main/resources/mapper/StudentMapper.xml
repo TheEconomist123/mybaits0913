@@ -95,13 +95,13 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.zhouzz.pojo.Student" >
-    insert into STUDENT (ID, NAME, AGE, 
-      SEX, HEIGHT, BIRTHDAY, 
-      COMMON, RESERVE1, RESERVE2, 
+    insert into STUDENT (ID, NAME, AGE,
+      SEX, HEIGHT, BIRTHDAY,
+      COMMON, RESERVE1, RESERVE2,
       RESERVE3)
-    values (#{id,jdbcType=NUMERIC}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR}, 
-      #{sex,jdbcType=CHAR}, #{height,jdbcType=VARCHAR}, #{birthday,jdbcType=TIMESTAMP}, 
-      #{common,jdbcType=VARCHAR}, #{reserve1,jdbcType=VARCHAR}, #{reserve2,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=NUMERIC}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR},
+      #{sex,jdbcType=CHAR}, #{height,jdbcType=VARCHAR}, #{birthday,jdbcType=TIMESTAMP},
+      #{common,jdbcType=VARCHAR}, #{reserve1,jdbcType=VARCHAR}, #{reserve2,jdbcType=VARCHAR},
       #{reserve3,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.zhouzz.pojo.Student" >
@@ -231,4 +231,27 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
+
+  <select id="queryByStudentList" resultType="string" >
+    SELECT DISTINCT  a.id as id
+    FROM student a
+    <where>
+      <if test="studList != null and studList.size() > 0">
+        <foreach collection="studList" item="student" separator="OR">
+          <trim prefix="(" suffix=")" prefixOverrides="AND">
+            <if test="student.name != null">
+              a.name = #{student.name, jdbcType=VARCHAR}
+            </if>
+            <if test="student.age != null">
+              AND a.age = #{student.age, jdbcType=VARCHAR}
+            </if>
+            <if test="student.sex != null">
+              AND a.sex = #{student.sex, jdbcType=VARCHAR}
+            </if>
+          </trim>
+        </foreach>
+      </if>
+    </where>
+    ORDER BY a.id DESC
+  </select>
 </mapper>

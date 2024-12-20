@@ -32,8 +32,15 @@ public class Student {
         this.reserve4 = reserve4;
     }
 
+    public Student(String name, String age, String sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+
     public Student() {
     }
+
 
 
     public Student(Long id, String name, String age, String sex) {

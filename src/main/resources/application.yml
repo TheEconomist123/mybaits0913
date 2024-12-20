@@ -46,7 +46,8 @@ logging:
       apache:
         ibatis: debug
       mybatis:
-        spring: debug
+        spring:
+          SqlSessionFactoryBean: debug
    #com.zhouzz.mapper: debug
    #com.github.pagehelper: debug
 #配置redis
