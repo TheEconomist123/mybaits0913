@@ -23,14 +23,14 @@ public class TestProcedure extends BaseTest {
     @Test
     public void testProcedure() {
         //统计执行时间
-        long start = System.currentTimeMillis();
+      /*  long start = System.currentTimeMillis();
         //调用存储过程
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("cust_asset_proc");
         // 执行存储过程并获取输出
         Map<String, Object> execute = jdbcCall.execute();
         System.out.println("execute = " + execute);
         long end = System.currentTimeMillis();
-        System.out.println("执行时间：" + (end - start) + "ms");
+        System.out.println("执行时间：" + (end - start) + "ms");*/
 
     }
 

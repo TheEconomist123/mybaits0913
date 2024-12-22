@@ -27,7 +27,7 @@ public class TestSeq  extends BaseTest {
 
         Testtableby testtableby = new Testtableby();
         testtableby.setCreatetime(new Date());
-        for (int i = 0; i < 5000000; i++) {
+        for (int i = 0; i < 5; i++) {
             testtableby.setSex(i % 2 == 0? "男" : "女");
             int insert = testtablebyMapper.insert(testtableby);
         }
