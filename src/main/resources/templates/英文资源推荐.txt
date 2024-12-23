@@ -3,62 +3,62 @@
 ---
 
 ### **通用新闻网站**：
-1. **BBC News**  
-   - 网站：[bbc.com/news](https://www.bbc.com/news)  
+1. **BBC News**
+   - 网站：[bbc.com/news](https://www.bbc.com/news)
    - 特点：报道全球新闻，语言规范，适合英语学习者阅读。BBC 还提供 **Learning English** 专区，内容更简单易懂。
    - 推荐版块：Europe、Asia、Science & Environment。
 
-2. **CNN**  
-   - 网站：[cnn.com](https://www.cnn.com)  
+2. **CNN**
+   - 网站：[cnn.com](https://www.cnn.com)
    - 特点：提供详细的美国和国际新闻，语言稍微偏复杂，但练习阅读长句非常有帮助。
 
-3. **Reuters (路透社)**  
-   - 网站：[reuters.com](https://www.reuters.com)  
+3. **Reuters (路透社)**
+   - 网站：[reuters.com](https://www.reuters.com)
    - 特点：新闻报道语言简洁明了，内容以事实为主，很适合用来学习正式英语表达。
 
-4. **The Guardian**  
-   - 网站：[theguardian.com](https://www.theguardian.com)  
+4. **The Guardian**
+   - 网站：[theguardian.com](https://www.theguardian.com)
    - 特点：提供丰富的新闻话题，包括政治、文化和环境。部分内容需要注册，但大部分文章可以免费阅读。
 
 ---
 
 ### **适合英语学习者的网站**：
-1. **BBC Learning English**  
-   - 网站：[bbc.co.uk/learningenglish](https://www.bbc.co.uk/learningenglish)  
+1. **BBC Learning English**
+   - 网站：[bbc.co.uk/learningenglish](https://www.bbc.co.uk/learningenglish)
    - 特点：提供英语学习资源，新闻配有慢速音频和词汇解析，非常适合初学者。
 
-2. **Voice of America (VOA) Learning English**  
-   - 网站：[learningenglish.voanews.com](https://learningenglish.voanews.com)  
+2. **Voice of America (VOA) Learning English**
+   - 网站：[learningenglish.voanews.com](https://learningenglish.voanews.com)
    - 特点：慢速英语新闻报道，配有文本和音频，语速较慢且用词简单，适合中低级英语学习者。
 
-3. **Breaking News English**  
-   - 网站：[breakingnewsenglish.com](https://breakingnewsenglish.com)  
+3. **Breaking News English**
+   - 网站：[breakingnewsenglish.com](https://breakingnewsenglish.com)
    - 特点：为英语学习者设计的新闻网站，每篇新闻有不同难度等级，配有词汇表和练习题。
 
 ---
 
 ### **专项报刊网站**：
-1. **National Geographic**  
-   - 网站：[nationalgeographic.com](https://www.nationalgeographic.com)  
+1. **National Geographic**
+   - 网站：[nationalgeographic.com](https://www.nationalgeographic.com)
    - 特点：聚焦自然、环境和科学知识，适合对环境和文化感兴趣的学习者。
 
-2. **Scientific American**  
-   - 网站：[scientificamerican.com](https://www.scientificamerican.com)  
+2. **Scientific American**
+   - 网站：[scientificamerican.com](https://www.scientificamerican.com)
    - 特点：提供科技与科学类新闻，语言稍显专业，但很适合扩展科技词汇。
 
-3. **The Economist - Free Articles**  
-   - 网站：[economist.com](https://www.economist.com)  
+3. **The Economist - Free Articles**
+   - 网站：[economist.com](https://www.economist.com)
    - 特点：每周可以免费阅读一些文章，内容涵盖全球政治、经济与文化，适合提高高阶英语水平。
 
 ---
 
 ### **专注青少年的简易报刊**：
-1. **Newsela**  
-   - 网站：[newsela.com](https://newsela.com)    【这个有意思】
+1. **Newsela**
+   - 网站：[newsela.com](https://newsela.com)    【这个有意思 这个是根据读音在页面高亮显示文字。】
    - 特点：提供适合不同英语水平的新闻内容，尤其适合初中、高中学生。
 
-2. **TIME for Kids**  
-   - 网站：[timeforkids.com](https://timeforkids.com)  
+2. **TIME for Kids**
+   - 网站：[timeforkids.com](https://timeforkids.com)
    - 特点：为青少年设计的新闻网站，用词简单，内容有趣。
 
 ---

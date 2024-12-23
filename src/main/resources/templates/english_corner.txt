@@ -106,7 +106,7 @@
 105.I don't want to rush you, but let's try to catch the next bus.我不想催你，但我们还是试着搭上下一班公交车吧。
 106.It had been raining on and off since the day before yesterday. 从前天开始断断续续地下着雨。
 107.The population of your city is about five times as large as that of my town.你们城市的人口大约是我所在城市的人口的五倍。
-108.Don't go too near the dog for fear it should bite you.不要太靠近那条狗，怕它咬你。 for fear 以免 
+108.Don't go too near the dog for fear it should bite you.不要太靠近那条狗，怕它咬你。 for fear 以免
 109.I am very sorry ,but I must cancel our appointment for February 27th.非常抱歉，我必须取消 2 月 27 日的约会.
 110.That scandal will be known to everybody in the course of time.随着时间的推移，那件丑闻将为大家所知。
 111.I went back to online chat to talk with a friend of mine.我回到在线聊天室与我的一个朋友聊天。
@@ -289,7 +289,7 @@
 50.I believe.
 51.As scheduled.按计划。
 52.Stay sharp.保持警觉。
-53.I'm Listening. 
+53.I'm Listening.
 54.No charge. 不收费。
 55.Nice day.天气很好
 56.It's warm.
@@ -304,7 +304,7 @@
 75.Enough said.无需多言。
 76.Personal reasons.个人原因
 77.That's natual.这很自然。
-78.No pain. 
+78.No pain.
 79.Lucky you.真幸运。
 80.We’re done. 我们完成了。
 81.That's impossible.
@@ -428,7 +428,7 @@ In a decisive victory.
 
 
 1.Hong Kong mogul Jimmy Lai testifies in controversial trial. 香港大亨黎智英在备受争议的审判中作证。
- 
+
 Jimmy Lai, one of Hong Kong's most influential pro-democracy figures, is taking the stand on Wednesday in a national security trial that may see him sentenced to life imprisonment.
 
 1.President Volodymr Zelensky has suggested that the parts of Ukraine under his control should be taken "under the Nato umbrella" to try and stop the "hot phase" of the war .
@@ -455,7 +455,7 @@ Jimmy Lai, one of Hong Kong's most influential pro-democracy figures, is taking 
 6.1 泽连斯基说：“北约从未考虑过这样的建议，因为没有人正式向我们提出。”
 6.2 "ˈneɪtəʊ hæz ˈnɛvə kənˈsɪdəd sʌʧ ə prəˈpəʊzᵊl,bɪˈkɒz nəʊ-wʌn hæz əˈfɪʃᵊli ˈɒfəd ɪt tuː ʌs," Zelensky sɛd.
 
-7.Nato would need to offer membership to the whole country,including those parts currently under Russian control,he said. 
+7.Nato would need to offer membership to the whole country,including those parts currently under Russian control,he said.
 7.1他说，北约需要向整个国家提供成员国资格，包括目前在俄罗斯控制下的地区。
 7.2 ˈneɪtəʊ wʊd niːd tuː ˈɒfə ˈmɛmbəʃɪp tuː ðə həʊl ˈkʌntri,ɪnˈkluːdɪŋ ðəʊz pɑːts ˈkʌrᵊntli ˈʌndə ˈrʌʃᵊn kənˈtrəʊl,hiː sɛd.
 
@@ -479,7 +479,7 @@ year if Ukraine's allies show sufficient resolve.
 11.2  ðə juːˈkreɪniən ˈprɛzɪdᵊnt hæz ɔːlˈrɛdi sɛd ðæt hiː θɪŋks ðə wɔː kʊd ɛnd ɪn ðə ˈkʌmɪŋ jɪər ɪf juːˈkreɪnz ˈælaɪz ʃəʊ səˈfɪʃᵊnt rɪˈzɒlv.
 
 
-12.Reports suggest that discussion of the so-called West German model-Nato membership offered to a divided country-has been going on in Western circles for more than  a year. 
+12.Reports suggest that discussion of the so-called West German model-Nato membership offered to a divided country-has been going on in Western circles for more than  a year.
 12.1据报道，西方圈子里关于所谓西德模式（让一个分裂的国家加入北约）的讨论已经进行了一年多。
 12.2rɪˈpɔːts səˈʤɛst ðæt dɪˈskʌʃᵊn ɒv ðə ˈsəʊˈkɔːld wɛst ˈʤɜːmən ˈmɒdᵊl-ˈneɪtəʊ ˈmɛmbəʃɪp ˈɒfəd tuː ə dɪˈvaɪdɪd ˈkʌntri-hæz biːn ˈɡəʊɪŋ ɒn ɪn ˈwɛstᵊn ˈsɜːkᵊlz fɔː mɔː ðæn ə jɪə.
 
@@ -490,8 +490,8 @@ year if Ukraine's allies show sufficient resolve.
 14."You can't give an invitation to just one part of a country" the president said ,according to a translation provided by Sky News,"Why? Because thus,you would recognise that Ukraine is only that territory of Ukraine,and the other one is Russia"
 
 
-annexed 
-peninsula 
+annexed
+peninsula
 entirely
 
 
@@ -535,7 +535,7 @@ France's Lomming Dilemma:No Confidence,No Government,No Budget.
 
 
 South Korea’s democracy passed its biggest test in decades on Tuesday,
- as it quickly rebuffed a dubious declaration of martial law by President Yoon Suk Yeol. 
+ as it quickly rebuffed a dubious declaration of martial law by President Yoon Suk Yeol.
  Lawmakers immediately voted 190-0 to terminate the order,
  and Mr. Yoon acquiesced, with his cabinet approving a motion to end martial law at about 4:30 a.m. Wednesday.
 
@@ -546,11 +546,640 @@ everything will ok ,It's not a big deal, take your time. time to live it up.
 I'm worry every second.
 
 The troubled history of martial law.
-"戒严法的动荡历史" 或者 "戒严法的曲折历史" 
+"戒严法的动荡历史" 或者 "戒严法的曲折历史"
+coups and toppled presidents many hoped South Korea had left behind.
+
+The troubled history of martial law.
+---短句
+1.This production is primarily aimed at the American market.
+2.I don't care what others say.
+3.I just about to head off to the station.
+4.Ziri tried to grab the weapon.
+5.How is it going with her?
+6.It's impossible to feel happy in conditions like that.
+7.Things will be different next time.
+8.My brother has an  interest in pop music.
+9.I don't think that movie was very interesting.
+10.Let's hope Tom is all right.
+11.Tom may do that for Marry.
+12.May I visit your home these days?
+13.Tom told me he di study French in hight school.
+14.Tom escaped  unscathed from the accident.
+15.I know that you did it.
+16.Tom is pretty sure that he saw a wolf.
+17.Are you  a man or a frightened rabbit?
+18.Are you the one who went to Boston with Tom?
+19.You have to go to bed now.
+20.Tome told me that she thought Tom was being sarcastic.
+21.I'm sure Tom will be obstinate.
+22.We can see the island in the distance.
+23.Indeed,this car is samll,but it's powerfull.
+24.We must study the affair as a whole.
+25.I must start no matter how heavily it snows.
+26.I saw him at one time or another.
+27.The air is bad here.Will you open the window.
+28.Can we get to Mars in the near future.
+29.I'll finish it as quickly as I can.
+30.Could you put this report into Italian for me?
+31.After the rain ,the sun emerged from the clouds.
+32.The mothet told her daughter to do it herself.
+33.If you had not helped me ,I would have failed.
+34.Please hang on,I put him on the phone.
+35.You don't need to go unless you want to.
+36.Perhaps that pair of shoes will fit me.
+37.Do you have number where we can contact you.
+38.Such an economic program  will help the rich at the expense of the poor.
+39.Direct marketing is a means of allowing people to shop from home.
+40.When it comes to my supervisor, he's very inconsistent,so we never get any work done.
+41.This stone so heavy that could not lift it.
+42.Houses should be built so as to admit plenty of light as well as fresh air.
+43.Passengers shall not converse with the driver while the bus is in motion.
+44.The company's financial year runs from April until March of the following year.
+45.The train was so crowded that I was kept standing all the way.
+46.After running up the hill ,I was completely out of breach.
+47.Paul was not a lazy boy ,As matter of fact,he works hard.
+48.At the funeral,the widow looked very dignified ,with her black suit ,hat and gloves.
+49.Carol and Carl are in the kennel and the other dogs are playing in the garden.
+50.I went  through my money in a very short time.
+51.If you take care of the small things,the big things will take care of themselves.
+52.As soon as he felt his house shake, he rushed out into the garden.
+53.Standing as it does on the hill.the hotel commands a fine view.
+54.He was the kind of kid who was always showing off to his classmates.
+55.It's true that she knows a lot of about cooking,but she isn't a good cook.
+56.The internet is very usefull for knowing the circumstances of each part of the world.
+57.Sorry,but can you show me the way to the next village?
+58.Your essay has some mistakes, but as a whole it is very good.
+59.Some people look down on others because they have less money.
+60.Mary is so nice a girl that she is loved by everybody.
+61.If I had 25% more income,I'd be more satisfied with my life.
+62.I'm glad you enjoy skiing,But I guess it's just not my cup of tea.
+63.Kate thought the teacher's lecture was dull,boring, and endless.
+64.Our captain got sick,So I attended the meeting in his place.
+65.I intend to take a month's vacation on completion of this job.
+66.The hardness of a diamond is such that it can cut glass.
+67.The money that Chris has not paid back adds up to a large sum.
+68.I had to attend two meetings yesterday,and there was no time  to have lunch between them.
+69.The scientists gave a lecture on the structure of the universe.
+70. Had he taken his doctor's advice,he might not have died.
+71.We all try hard to make the grade in life,but only a few succeed.
+72.This is the first time  I've seen such a dreadful movie.
+73.No matter what results may follow,I will carry out my plan.
+74.Joan became a greate actress in spite of having a difficult childhood.
+75.What with that fatigue and lack of sleep ,he has fallen ill at last.
+76.The game would not have been called off if it hadn't rained so heavily.
+77.I don't want to put her to even a small inconvenience.
+78.Our company needs someone who is at home in advanced technology.
+79.We spent the major part of our hlidays in the country.
+80.When we have a family argument,my husband always sides with his mother instead of me.
+81.From the look of the sky,I'm afraid the rain won't let up for a while.
+82.This dog is trained to save people in the mountains.
+83.In the absence of a better idea, I had to choose this method.
+84.To be an interesting person you have to feed and exercise your mind.
+85.The influence of the strong dollar on the U.S economy has become very serious.22.33
+86.The train wast just on the point of starting when I got to the station.
+87.If you hear from Jenny.could you teller I would like to see her?
+88.Paul male it a ruler not to be late for his appointments.
+89.In the UK,they have much rain at this time of year.
+90.It will not make much difference whether you go today or tomorrow.
+91.The other girls are jealous of Lily because she is extremly pretty.
+92.Before the horse race begins,the Jockey's grip reins tightly to restrain the impatient horse.
+93.All hope of my promotion went up in smoke after my reorganization plan fell through.
+94.Because of his great professional skill,the lawyer has about large number of clients.
+95.Smith has spent years studying the effects of sleep and sleep loss on memory and learning.
+96.I image that you are wondering when you new PC will arrive.
+97.You must be a good athlete to have run a mile in such a short time.
+98.In a foreign country most of us will go through culture shock.
+99.It is true he is a learned man,but he lacks common sense.
+100.The more I studied computers.the more interesting I came to find it.
+101.When I was in Australia ,I had great difficulty in speaking English.
+102.There are things in this world which simply cannot be expressed in the form of words.这世界上有些事情根本无法用语言来表达。
+103.Granted that you are right ,we still have to persuade him first.即使你说得对，我们也得先说服他。
+104.Brian, in his pajamas, is engaged in reading in the house in the morning.早上，身穿睡衣的布莱恩正在屋里看书。
+105.I don't want to rush you, but let's try to catch the next bus.我不想催你，但我们还是试着搭上下一班公交车吧。
+106.It had been raining on and off since the day before yesterday. 从前天开始断断续续地下着雨。
+107.The population of your city is about five times as large as that of my town.你们城市的人口大约是我所在城市的人口的五倍。
+108.Don't go too near the dog for fear it should bite you.不要太靠近那条狗，怕它咬你。 for fear 以免
+109.I am very sorry ,but I must cancel our appointment for February 27th.非常抱歉，我必须取消 2 月 27 日的约会.
+110.That scandal will be known to everybody in the course of time.随着时间的推移，那件丑闻将为大家所知。
+111.I went back to online chat to talk with a friend of mine.我回到在线聊天室与我的一个朋友聊天。
+
+
+--短句
+1.I‘m bored. 我很无聊。
+2.Dinner's ready.晚餐准备好了
+3.No problem.没问题
+4.Hang up.挂断
+5.Sounds good.听起来不错
+6.Sounds reasonable.听起来很合理。
+7.Miss you .想念你
+8.Come on.快点
+9.Get out.出去
+10.Go on.继续
+11.Calm down.冷静
+12.Safety first. 安全第一
+13.Let’s eat.我们吃饭吧。
+14.Be carefull.小心点
+15.I‘m comming.我来了
+16.He's improving. 他在进步。
+17.That's ridiculous. 太荒谬。
+18.Excuse me. 对不起，请问。
+19.What's new? 有什么新鲜事
+20.You're fired. 你被解雇了。
+21.She's beautiful.她很美.
+22.Just looking. 只是看看。
+23.How's that? 那怎样？
+24.Well done? 做得好。
+25.Stop complaining. 别抱怨。
+26.That's great. 太好了。Go
+27.Go upstairs.上楼.
+28.Go downstairs.下楼.
+29.At least.至少。
+30.Don't hesitate.不要犹豫。
+31.Advise me.给我建议。
+32.Speak up.大点声。
+33.Don't ask.别问.
+34.Stop talking. 别说了。
+35.Carry this. 把这个拿着。
+36.Not required. 不需要。
+37.Replace it.更换它。
+38.inform me.通知我
+39.Speak now. 现在说
+40.Speak again.再说一遍.
+41.Try again. 再试一遍.
+42.Turn around.转身。
+43.Sign here.在这里签名。
+44.Please wait. 请稍等。
+45.Last chance.最后机会。
+46.Stop whistling.别吹口哨。
+47.They waited.他们等待了。
+48.Take this.拿着这个、
+49.Clean up。清理
+50.Please leave.请离开。
+51.Wear this.穿上这个
+52.Don't go. 不要走。
+53.Run upstairs. 跑上楼
+54.Come near.靠近一些
+55.Behave prudently.要谨慎行为。
+56.Challenge yourself. 挑战自己。
+57.Join us.加入我们。
+58.Now leave. 现在离开
+59.Walk ahead.向前走.
+60.He shrugged.他耸了耸肩。
+61.Watch Carefully. 仔细观察。
+62.Stop worrying.别担心。
+63.Break it.把它弄坏。
+64.Don't break.不要打破。
+65.How small.多小。
+66.How big.多大
+67.It's funny.这很有趣。
+68.Prepare yourself. 做好准备。
+69.Make breakfast. 做早餐。
+70.Don't delay.不要拖延。
+71.Let'S try.
+72.Return home.
+73.Work properly.
+74.Work hard.
+75.Stand here.
+76.Don't blame.
+77.Come soon.
+78.Stay close.
+79.Nobody listens.
+80.Nobody came.
+81.Come closer.
+82.Look again.
+83.Release him.
+84.Keep it.
+85.Keep simling.
+86.Smell this.
+87.Get everything.
+88.Take everything.
+89.Somebody called. 有人打电话。
+90.Step inside.进来
+91.Step aside. 让开。
+92.Defend yourself.保护自己
+93.Be punctual.准时。
+94.Copy me. 跟我做。
+95.Watch me. 看着我
+96.Control yourself. 控制自己。
+97.I refuse. 我拒绝。
+98.Be brave. 勇敢点。
+99.Ask her. 问他。
+100.She refuse.
+101.Forget her.
+102.Everybody left.大家都走了
+103.Keep listening.继续听
+104.Keep writing. 继续写。
+105.Stay quiet.保持安静。
+106.Nobody asked.
+107.Catch him.抓住他。
+108.Think again.再想想。
+109.How disgusting.真恶心。
+110.Skip it.跳过他。
+111.Tell me. 告诉我。
+112.Tell everybody. 告诉大家。
+113.Start over. 重新开始。
+114.Eat slowly. 慢慢吃
+115.Jump across.跳过去
+116.Wait inside.在里面等。
+117.Wait outisde.在外面等。
+118.Be alert. 保持警惕。
+119.Behind you.在你后面
+120.How adorable.真可爱
+
+
+
+短语
+1.How aburd.多么荒谬
+2.Stay clean.保持干净
+3.He went.他走了。
+4.Why me?为啥是我
+5.What now?现在怎么办。
+6.Who‘s next.下一个是谁？
+7.Don’t wink.不要眨眼。
+8.Move ahead.向前移。
+9.Say cheese.说茄子。
+10.It‘s fantastic.太棒了。
+11.How many?
+12.We won.
+13.Many congratulations.热泪祝贺.
+14.Excellent work. 做的很好。
+15.I’m hungry.
+16.Hungry much ?
+17.I's starving.
+18.Good luck.
+19.Not sure.不确定。
+20.Everybody gossips.大家都在八卦
+21.How stupid多么愚蠢。
+22.At onece.立刻
+23.Once more. 再一次
+24.No need.
+25.God knows.天知道。
+26.Stop here.
+27.I‘m shocked. 我很震惊。
+28.Me neither.我也不。
+29.Just wonderfull.真的是太棒了。
+30.Wise up.清醒一些。
+31.Bless you.
+32.Be kind.要善良。
+33.This way
+34.What problem.
+35.Like what?像什么？
+36.For you.给你
+37.Big talk.说大话。
+38.Big words.空话。
+39.No thought.不考虑。
+40.Everybody ready?
+41.We're set. 我们准备好了。
+42.Oh yeah.
+43.But you.但是你
+44.Huge day.大日子
+45.Prove it.
+46.I'm leaving.
+47.Fair enough. 公平合理。
+48.Any time.
+49.Saturday's good.星期六可以
+50.I believe.
+51.As scheduled.按计划。
+52.Stay sharp.保持警觉。
+53.I'm Listening.
+54.No charge. 不收费。
+55.Nice day.天气很好
+56.It's warm.
+67.It's sunny.天气晴朗
+68.Now listen.
+69.It's breezy. 有微风。
+70.It's windy.有风
+71.It's cloudy.多云。
+72.I'll go.
+73.Be back.回来。
+74.Great work.干的好。
+75.Enough said.无需多言。
+76.Personal reasons.个人原因
+77.That's natual.这很自然。
+78.No pain.
+79.Lucky you.真幸运。
+80.We’re done. 我们完成了。
+81.That's impossible.
+82.Oh Jesus.天啊!
+83.Oh God.
+84.How this?
+85.It's easy.
+86.Too many.
+87.I dunno.我不知道。
+88.The worst.最糟糕。
+89.Until now.知道现在
+90.So good.
+91.You sure.
+92.He asleep?
+93.Almost ready. 快好了。
+94.Need Something.需要点什么？
+95.It's classy. 这很有品味。
+96.We're closed. 我们关门了.
+97.See that.
+98.Let's sit.
+99.Right hers.就在这里
+100.It's simple.这个很简单
+101.What's that？那是什么？
+102.You know?
+103.What's then.然后呢？
+104.It's unspeakable.这难以言喻。
+105.I declined. 我拒绝了。
+106.Could be.可能是.
+106.What's left.剩下什么？
+107.It's showtime.是上场时间了
+108.Back here.
+109.I'm tried.
+110.I'm going. 我要走了。
+111.Please hold.
+112.Hold on.
+113.Choose carefully.仔细选择.
+114.Choose wisely.明智选择.
+115.Don't move.
+116.Just breath.
+117.What?No!
+118.What?Why?
+119.Walk slowly.慢慢走。
+120.Speak loudly.大声说.
+121.Speak aloud.
+122.Speak softly.
+123.Speak clearly.
+124.I'm back.
+125.Welcome home.
+126.You done?
+127.Almost done.
+128.Take care.保重。
+129.See you.再见
+
+
+
+
+每日听力一小时中级日常口语3000句第八集|中级英语|进阶口语
+1.It was obvious that the driver had not been carefull enough.显然司机不够小心。
+2.He got angry beacuse he thought that everyone was trying to make a fool of him.他很生气，因为他认为大家都在愚弄他。
+3.He was a benevolent old man who volunteered mow his neighbor's lawns for free.他是一位仁慈的老人，自愿免费为邻居修剪草坪。
+4.We've talked over this matter in detail for half an hour already.Let's finish it off.这件事情我们已经详细讨论了半个小时了，我们把它结束吧。
+5.When we were on the brink of starvation,they saved our lives.当我们濒临饥饿时，他们救了我们的命。
+6.If she should come to Japan,Jane would be very happy.如果她能来日本，简会非常高兴。
+7.Those brother were both over 6 feet in height.That's indeed tall.这兄弟俩的身高都超过6英尺。确实很高。
+8.It's a strange story,but every word of it it true.这是一个奇怪的故事，但其中的每一个字都是真实的。
+9.Cassette tapes seem to have given way to compact disks in popularity.盒式磁带的流行程度似乎已让位于光盘。
+10.The womam to whom you were talking is my sister.和你谈话的那个女人是我的妹妹。
+11.May Day is also a festival day for the workers in the world.五一节也是全世界劳动者的节日。
+12.Mike and I had a bamburge this afternoon,and we talked.今天下午我和迈克吃了竹子三明治并进行了交谈。
+13.If it were not for air and water,nothing could live.如果没有空气和水，一切生物都无法生存。
+14.It was so hot that she felt like eating ice cream.天气太热了，她很想吃冰淇淋。
+15.I hope you will understand the difficult circumstances we're working under.我希望你们能理解我们工作的困难环境。
+16.As I was at a loss what to do,I asked the teacher for advice.当我不知该怎么做时，我向老师寻求建议。
+17.Some scientists predict that the world oil reserves will be used up within a century.一些科学家预测世界石油储量将在一百年内耗尽。
+18.The bath was not hot enoght and I was unable to enjoy it.洗澡水不够热，我无法享受。
+19.All of us are connected with the past and the future as well as the present.我们每个人都与过去、未来和现在息息相关。
+20.where on earth do you suppose she is going in the dead of night.你觉得这么晚了她到底要去哪儿呢？
+21.New York is one of the  cities that I previously thought that I wanted to visit.纽约是我以前想去参观的城市之一。
+22.When it began to rain ,she told her son to take in the washing.当开始下雨的时候，她告诉儿子把洗好的衣服拿去洗。
+23.The past can only be know ,not changed ,The future can only be changed ,not known.过去只能知道，不能改变，未来只能改变，不能知道
+24.A spider can produce a silky substance from tiny openings on its underside.蜘蛛能从其腹部的微小开口处产生丝状物质。
+25.I shall graduate from the milldle school in one and half years.还有一年半我就要中学毕业了。
+26.After the rain had let up a bit ,we made dash for the car.雨小了一些后，我们就冲过去赶汽车。
+27.If anything, my new job is harder than my old one. 如果说有什么不同的话，那就是我的新工作比旧工作更难。
+28.I usually gas up the car at this service station. 我通常在这个服务站给汽车加油。
+29.Although it is a very difficult task,I will do my best.虽然这是一项非常艰巨的任务，但我会尽力而为。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The US exit polls are starting to build a picture of how different groups of people have voted aaccross the nation.
+Exit poll data is updated throughout the night so the picture may change.
+Look at race ,Trump is leading among white voters -biggest single group -and Harris is leading with black voters.
+See detailed results showing how people in each individual state voted in the presidential ,Senate,House and governor races.
+Americans are choosing their next president,in a contest being closely watched around the world.
+
+Trump preparesto  appoint top jobs after Harris vows to help transition.
+
+Donald Trump  is preparing to select his top team ahead of his
+return to the White House,after Kamala Harris vowed a "peacefull transfer of power";
+
+Donald Trump is preparing to select his top team ahead of his return to the White House, after Kamala Harris vowed a "peacefull transfer of power"
+
+
+In her first speech  since losing the election ,
+Harris told supporters:"I know many people feel like we are  entering  a dark time,but for the benefit of us all ,I hope that is not the case.
+
+Harris told supporters:"I know many people feel like we are entering a dark time, but for the benefit of us all,I hope that is not the case."
+
+In a decisive victory.
+
+
+1.Hong Kong mogul Jimmy Lai testifies in controversial trial. 香港大亨黎智英在备受争议的审判中作证。
+
+Jimmy Lai, one of Hong Kong's most influential pro-democracy figures, is taking the stand on Wednesday in a national security trial that may see him sentenced to life imprisonment.
+
+1.President Volodymr Zelensky has suggested that the parts of Ukraine under his control should be taken "under the Nato umbrella" to try and stop the "hot phase" of the war .
+1.1ˈprɛzɪdᵊnt Volodymr Zelensky hæz səˈʤɛstɪd ðæt ðə pɑːts ɒv juːˈkreɪn ˈʌndə hɪz kənˈtrəʊl ʃʊd biː ˈteɪkᵊn "ˈʌndə ðə ˈneɪtəʊ ʌmˈbrɛlə" tuː traɪ ænd stɒp ðiː "hɒt feɪz" ɒv ðə wɔː .
+1.2 乌克兰总统泽连斯基建议，他控制下的乌克兰部分地区应“纳入北约保护伞下”，以试图阻止战争的“热阶段”。
+
+2.In a long, wide-ranging interview with Sky News,the Ukrainian president was asked whether he could accept Nato membership,but only on the territory that Kyiv currently holds.
+2.1ɪn ə lɒŋ, waɪd-ˈreɪnʤɪŋ ˈɪntəvjuː wɪð skaɪ njuːz,ðə juːˈkreɪniən ˈprɛzɪdᵊnt wɒz ɑːskt ˈwɛðə hiː kʊd əkˈsɛpt ˈneɪtəʊ ˈmɛmbəʃɪp,bʌt ˈəʊnli ɒn ðə ˈtɛrɪtᵊri ðæt ˈkiːɛv ˈkʌrᵊntli həʊldz.
+2.2 在接受天空新闻台的一次长时间、内容广泛的采访中，乌克兰总统被问及是否可以接受北约成员资格，但仅限于基辅目前拥有的领土。
+
+3.Ukraine could then attempt to negotiate  the return of territory currently  under Russian control " in a diplomatic way",he said .
+3.1juːˈkreɪn kʊd ðɛn əˈtɛmpt tuː nɪˈɡəʊʃieɪt ðə rɪˈtɜːn ɒv ˈtɛrɪtᵊri ˈkʌrᵊntli ˈʌndə ˈrʌʃᵊn kənˈtrəʊl " ɪn ə ˌdɪpləˈmætɪk weɪ",hiː sɛd
+3.2他说，乌克兰可以尝试“通过外交方式”谈判归还目前在俄罗斯控制下的领土
+
+4.But the suggestion is highly theoretical,As Zelensky pointed out ,no-one has yet made such an offer.
+4.1bʌt ðə səˈʤɛsʧᵊn ɪz ˈhaɪli θɪəˈrɛtɪkᵊl,æz Zelensky ˈpɔɪntɪd aʊt ,nəʊ-wʌn hæz jɛt meɪd sʌʧ ən ˈɒfə.
+4.2但这一建议过于理论化，正如泽连斯基指出的，目前还没有人提出过这样的提议。
+
+5.whether Nato  would ever consider such a move is highly doubtful,
+5.1ˈwɛðə ˈneɪtəʊ wʊd ˈɛvə kənˈsɪdə sʌʧ ə muːv ɪz ˈhaɪli ˈdaʊtfʊl.
+5.2北约是否会考虑采取此举仍令人十分怀疑。
+
+6."Nato has never considered such a proposal,because no-one has officially offered it to us," Zelensky said.
+6.1 泽连斯基说：“北约从未考虑过这样的建议，因为没有人正式向我们提出。”
+6.2 "ˈneɪtəʊ hæz ˈnɛvə kənˈsɪdəd sʌʧ ə prəˈpəʊzᵊl,bɪˈkɒz nəʊ-wʌn hæz əˈfɪʃᵊli ˈɒfəd ɪt tuː ʌs," Zelensky sɛd.
+
+7.Nato would need to offer membership to the whole country,including those parts currently under Russian control,he said.
+7.1他说，北约需要向整个国家提供成员国资格，包括目前在俄罗斯控制下的地区。
+7.2 ˈneɪtəʊ wʊd niːd tuː ˈɒfə ˈmɛmbəʃɪp tuː ðə həʊl ˈkʌntri,ɪnˈkluːdɪŋ ðəʊz pɑːts ˈkʌrᵊntli ˈʌndə ˈrʌʃᵊn kənˈtrəʊl,hiː sɛd.
+
+8."You can‘t give an invitation to just one part of a country," the president said,according to a translation provided by Sky News.
+"Why? Because thus you would recognise that Ukraine is only that territory of Ukraine, and the other one is Russia."
+8.1根据天空新闻提供的翻译，总统说：“你不能只向一个国家的一部分发出邀请。为什么？因为这样你就会认识到乌克兰只是乌克兰的领土，而另一个是俄罗斯。”
+8.2 "juː kɑːnt ɡɪv [æn] ˌɪnvɪˈteɪʃᵊn tuː ʤʌst wʌn pɑːt ɒv ə ˈkʌntri," ðə ˈprɛzɪdᵊnt sɛd, əˈkɔːdɪŋ tuː ə trænzˈleɪʃᵊn prəˈvaɪdɪd baɪ skaɪ njuːz. "waɪ? bɪˈkɒz ðʌs, juː wʊd ˈrɛkəɡnaɪz ðæt juːˈkreɪn ɪz ˈəʊnli ðæt ˈtɛrɪtᵊri ɒv juːˈkreɪn, ænd ði ˈʌðə wʌn ɪz ˈrʌʃə."
+
+9. Lots of people were proposing ceasefires,he said ,but without a mechanism to prevent Russia from attacking again,
+ceasefires were simply too dangerous.
+9.1他说，很多人都提议停火，但如果没有阻止俄罗斯再次袭击的机制，停火就太危险了。
+9.2 lɒts ɒv ˈpiːpᵊl wɜː prəˈpəʊzɪŋ ˈsiːsˌfaɪəz, hiː sɛd, bʌt wɪˈðaʊt ə ˈmɛkənɪzᵊm tuː prɪˈvɛnt ˈrʌʃə frɒm əˈtækɪŋ əˈɡɛn, ˈsiːsˌfaɪəz wɜː ˈsɪmpli tuː ˈdeɪnʤᵊrəs.
+
+10. Only NATO  membership ,he said,could offer that kind of guarrantee.
+10.1他说，只有北约成员国才能提供这样的保障。
+10.2 ˈəʊnli ˈneɪtəʊ ˈmɛmbəʃɪp, hiː sɛd, kʊd ˈɒfə ðæt kaɪnd ɒv ˌɡærᵊnˈtiː.
+
+11.The Ukrainia president has already said that he thinks the war would end in the coming
+year if Ukraine's allies show sufficient resolve.
+11.1乌克兰总统已表示，他认为，如果乌克兰的盟友表现出足够的决心，战争可能在明年结束。
+11.2  ðə juːˈkreɪniən ˈprɛzɪdᵊnt hæz ɔːlˈrɛdi sɛd ðæt hiː θɪŋks ðə wɔː kʊd ɛnd ɪn ðə ˈkʌmɪŋ jɪər ɪf juːˈkreɪnz ˈælaɪz ʃəʊ səˈfɪʃᵊnt rɪˈzɒlv.
+
+
+12.Reports suggest that discussion of the so-called West German model-Nato membership offered to a divided country-has been going on in Western circles for more than  a year.
+12.1据报道，西方圈子里关于所谓西德模式（让一个分裂的国家加入北约）的讨论已经进行了一年多。
+12.2rɪˈpɔːts səˈʤɛst ðæt dɪˈskʌʃᵊn ɒv ðə ˈsəʊˈkɔːld wɛst ˈʤɜːmən ˈmɒdᵊl-ˈneɪtəʊ ˈmɛmbəʃɪp ˈɒfəd tuː ə dɪˈvaɪdɪd ˈkʌntri-hæz biːn ˈɡəʊɪŋ ɒn ɪn ˈwɛstᵊn ˈsɜːkᵊlz fɔː mɔː ðæn ə jɪə.
+
+13.Zelensky said he would, but only if Nato membership was offered to the whole of Ukraine, within its internationally  recognised  borders, first.
+   泽连斯基表示他会这么做，但前提是首先向整个乌克兰（在其国际公认的边境内）提供北约成员国资格。
+   Zelensky sɛd hiː wʊd, bʌt ˈəʊnli ɪf ˈneɪtəʊ ˈmɛmbəʃɪp wɒz ˈɒfəd tuː ðə həʊl ɒv juːˈkreɪn, wɪˈðɪn ɪts internationally  ˈrɛkəɡnaɪzd ˈbɔːdəz, fɜːst.
+
+14."You can't give an invitation to just one part of a country" the president said ,according to a translation provided by Sky News,"Why? Because thus,you would recognise that Ukraine is only that territory of Ukraine,and the other one is Russia"
+
+
+annexed
+peninsula
+entirely
+
+
+
+
+Moscow mounted its second mass attack on Ukraine's energy infrastructure in less than two weeks.
+
+missile.
+
+
+missle
+
+
+
+
+
+
+
+
+
+
+
+France’s Looming Dilemma:
+
+France's Looming Dilemma：
+
+France's Looming Dilemma:
+France's Lomming Dilemma:
+France's Lomming Dilemma: No Confidence, No Government,No Budget.
+
+
+
+France's Lomming Dilemma:No Confidence,No Government,No Budget.
+
+
+everything will be ok, take your time. It's not a big deal. time to live it up.
+Try as you may ,you can't do it in a day.
+France's Lomming Dilemma:No Confidence,No Government,No Budget.
+
+
+
+
+South Korea’s democracy passed its biggest test in decades on Tuesday,
+ as it quickly rebuffed a dubious declaration of martial law by President Yoon Suk Yeol.
+ Lawmakers immediately voted 190-0 to terminate the order,
+ and Mr. Yoon acquiesced, with his cabinet approving a motion to end martial law at about 4:30 a.m. Wednesday.
+
+
+everything will ok ,It's not a big deal, take your time. time to live it up.
+
+
+I'm worry every second.
+
+The troubled history of martial law.
+"戒严法的动荡历史" 或者 "戒严法的曲折历史"
 coups and toppled presidents many hoped South Korea had left behind.
 
 The troubled history of martial law.
 
+A New Home
+
+他搬到了一个新城市。He moves to a new city.
+这里有很多建筑物。There are many buildings.
+有很多人在走路。There are a lot of people walking.
+有很多出租车。There are many taxis.
+他感到孤独。He feels lonely.
+这里每个人的行为都很不一样。Everyone acts no different here.
+他去了新学校。He goes to his new school.
+他看到一个看起来很友善的人。He sees a friendly looking person.
+他请这个人带他四处逛逛。He asks him to show him around.
 
 
+Chris and His Fish
+克里斯托弗想要一只宠物。Christopher wants a pet.
+他喜欢鱼。He likes fish.
+鱼很容易照顾。Fish are easy to take care of.
+鱼很漂亮。Fish are pretty.
+克里斯托弗也认为自己够负责。Christopher thinks he is responsible enough too.
+他决定自己去宠物店。He decides to go to the pet store himself.
+他买了一条鱼。He buys a fish.
+它很小。It is small.
+它是红色和黑色的。It is red and black.
+它游得很慢。It swims slowly.
+克里斯托弗把它放在鱼缸里。Christopher puts it in a tank.
 
+ The Oldest Brother
+
+布莱恩是哥哥们中的老大。Brian is the oldest brother.
+他有两个弟弟。He has two younger brothers.
+布莱恩帮助父母做家务。Brian helps his parents around the house.
+他洗碗。He washes the dishes.
+他拖地。He mops the floor.
+他去学校接弟弟们。 He picks up  his younger brothers from school.
+布莱恩还教弟弟们做正确的事。Brian teaches his younger brothers to do the right thing.
+他告诉他们要诚实、善良、友好。He tells them to be honest, kind, and friendly.
+布莱恩爱他的家人。Brian loves his family.
+
+A Successful Trade
+现在是午餐时间。It is lunch time.
+孩子们出去吃饭。The kids go out to eat.
+他们既兴奋又饥饿。They are excited and hungry.
+保罗吃了一个火腿三明治。Paul has  a ham sandwich
+他不喜欢火腿。He does not like ham.
+他想要一个金枪鱼三明治。He wants a tuna sandwich.
+莎拉吃了一个金枪鱼三明治。Sara has a tunna sandwich.
+她认为金枪鱼很臭。She thinks tuna is smelly.
+她想要一个火腿三明治。She wants a ham sandwich.
+保罗和莎拉见面了。Paul and Saea meet up.
+他们交换了三明治。They trade their sandwiches.
+他们得到了他们想要的东西。They get what they want.
+
+Making a Snowman
+她想堆雪人。She wants to make a snowman.
+首先，她滚出一个大雪球。First,she rolls a large ball of snow.
+其次，她滚出一个中等大小的雪球。Second ,She rolls a medium ball of snow.
+最后，她滚出一个小雪球作为雪人的头。Finally,She rolls a small ball of snow for the snowman's head.
+她把它们叠起来。She stacks them up.
+最大的雪球放在最下面。The largest ball is on the bottom.
+她放了一根胡萝卜作为鼻子。She puts a carrot for the nose.
+她用纽扣做眼睛和嘴巴。She uses buttons for the eyes and mouth.
+最后她加了一条围巾。The last thing she adds is a scarf.
+ (am  is are ,was were,become,smell,look seem,feel appear)
+English Skills
+唐纳德上二年级。Donald is in the second grade.
+他的阅读水平不如其他学生。His reading level is not as good as other students'.
+他想提高英语水平。He wants to improve his English skills.
+他开始多读书。He starts to read more.
+他查字典，查不认识的单词。He looks up words he doesn't know in the dictionary.
+他把单词的意思写下来。He writes down what the words mean.
+然后，他再读一遍书。Afterwards,he reads the book again.
+Practicing Drawing
+我正在练习绘画。I'm practicing drawing.
+我每周六和周日都会练习绘画。I practice drawing every Saturday and Sunday.
+老师会教我新东西。The teacher shows me new things.
+我现在知道如何画人物、动物和物体了。I know how to draw people,animals and objects now.
+我一直想变得更好，所以我每天都在练习。I always want to get better, so I practice every day.(practice 是不给予物动词不需要加宾语来进一步说明意思的)
+我父母总是告诉我，我是个好艺术家。My parents always tell me that I am a good artist.
+ (always 是副词修饰动词 是时间状语，that 引导宾语从句，me是间接宾语 that I am a good artist是直接宾语。)
+他们认为我可以把它当成一份工作。They think I can do it as a job.

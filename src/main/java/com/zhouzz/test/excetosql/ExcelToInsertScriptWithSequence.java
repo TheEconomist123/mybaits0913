@@ -91,6 +91,69 @@ public class ExcelToInsertScriptWithSequence {
         }
     }
 
+    public static void generateInsertScriptWithBatch(String excelFilePath, String tableName, String sequenceName, String outputFilePath, int batchSize) throws Exception {
+        FileInputStream fis = new FileInputStream(excelFilePath);
+        Workbook workbook = new XSSFWorkbook(fis);
+        Sheet sheet = workbook.getSheetAt(0);
+
+        Row headerRow = sheet.getRow(0);
+        int columnCount = headerRow.getPhysicalNumberOfCells();
+        List<String> columns = new ArrayList<>();
+        for (int i = 0; i < columnCount; i++) {
+            Cell cell = headerRow.getCell(i);
+            columns.add(cell.getStringCellValue().trim());
+        }
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath));
+
+        // 生成批量插入的SQL
+        writer.write("INSERT ALL\n");
+
+        int count = 0;
+        for (int i = 1; i < sheet.getPhysicalNumberOfRows(); i++) {
+            Row row = sheet.getRow(i);
+            StringBuilder sql = new StringBuilder("    INTO " + tableName + " (");
+
+            sql.append(String.join(", ", columns));
+            sql.append(") VALUES (");
+
+            // 添加主键ID（通过序列生成）
+            sql.append(sequenceName + ".nextval, ");
+
+            // 获取列数据
+            List<String> values = new ArrayList<>();
+            for (int j = 1; j < columnCount; j++) {  // 跳过主键ID列
+                Cell cell = row.getCell(j);
+                String cellValue = getCellValue(cell);
+                values.add(cellValue);
+            }
+
+            sql.append(String.join(", ", values));
+            sql.append(");\n");
+
+            writer.write(sql.toString());
+            count++;
+
+            // 如果达到了批量大小，生成一个COMMIT并重置批次
+            if (count >= batchSize) {
+                writer.write("COMMIT;\n");
+                count = 0;
+                writer.write("INSERT ALL\n");
+            }
+        }
+
+        // 如果有剩余的未提交的批次，写入COMMIT
+        if (count > 0) {
+            writer.write("COMMIT;\n");
+        }
+
+        writer.close();
+        fis.close();
+
+        System.out.println("SQL script with batch inserts generated successfully.");
+    }
+
+
     public static void main(String[] args) {
         try {
             // 输入Excel文件路径，输出SQL文件路径
@@ -100,7 +163,8 @@ public class ExcelToInsertScriptWithSequence {
             String outputFilePath = "output_insert_script.sql";
 
             // 生成INSERT语句脚本，主键ID通过序列生成
-            generateInsertScriptWithSequence(excelFilePath, tableName, sequenceName, outputFilePath);
+           generateInsertScriptWithSequence(excelFilePath, tableName, sequenceName,outputFilePath );
+
         } catch (Exception e) {
             e.printStackTrace();
         }
