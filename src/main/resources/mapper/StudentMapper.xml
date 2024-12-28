@@ -1,262 +1,350 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zhouzz.mapper.StudentMapper" >
-  <resultMap id="BaseResultMap" type="com.zhouzz.pojo.Student" >
-    <result column="ID" property="id" jdbcType="NUMERIC" />
-    <result column="NAME" property="name" jdbcType="VARCHAR" />
-    <result column="AGE" property="age" jdbcType="VARCHAR" />
-    <result column="SEX" property="sex" jdbcType="CHAR" />
-    <result column="HEIGHT" property="height" jdbcType="VARCHAR" />
-    <result column="BIRTHDAY" property="birthday" jdbcType="TIMESTAMP" />
-    <result column="COMMON" property="common" jdbcType="VARCHAR" />
-    <result column="RESERVE1" property="reserve1" jdbcType="VARCHAR" />
-    <result column="RESERVE2" property="reserve2" jdbcType="VARCHAR" />
-    <result column="RESERVE3" property="reserve3" jdbcType="VARCHAR" />
-  </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
+<mapper namespace="com.zhouzz.mapper.StudentMapper">
+    <resultMap id="BaseResultMap" type="com.zhouzz.pojo.Student">
+        <result column="ID" property="id" jdbcType="NUMERIC"/>
+        <result column="NAME" property="name" jdbcType="VARCHAR"/>
+        <result column="AGE" property="age" jdbcType="VARCHAR"/>
+        <result column="SEX" property="sex" jdbcType="CHAR"/>
+        <result column="HEIGHT" property="height" jdbcType="VARCHAR"/>
+        <result column="BIRTHDAY" property="birthday" jdbcType="TIMESTAMP"/>
+        <result column="COMMON" property="common" jdbcType="VARCHAR"/>
+        <result column="RESERVE1" property="reserve1" jdbcType="VARCHAR"/>
+        <result column="RESERVE2" property="reserve2" jdbcType="VARCHAR"/>
+        <result column="RESERVE3" property="reserve3" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
             </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause" >
-    <where >
-      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
             </foreach>
-          </trim>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+        ID
+        , NAME, AGE, SEX, HEIGHT, BIRTHDAY, COMMON, RESERVE1, RESERVE2, RESERVE3
+    </sql>
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zhouzz.pojo.StudentExample">
+        select
+        <if test="distinct">
+            distinct
         </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List" >
-    ID, NAME, AGE, SEX, HEIGHT, BIRTHDAY, COMMON, RESERVE1, RESERVE2, RESERVE3
-  </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zhouzz.pojo.StudentExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from STUDENT
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
-  <delete id="deleteByExample" parameterType="com.zhouzz.pojo.StudentExample" >
-    delete from STUDENT
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </delete>
-  <insert id="insert" parameterType="com.zhouzz.pojo.Student" >
-    insert into STUDENT (ID, NAME, AGE, 
-      SEX, HEIGHT, BIRTHDAY, 
-      COMMON, RESERVE1, RESERVE2, 
-      RESERVE3)
-    values (#{id,jdbcType=NUMERIC}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR}, 
-      #{sex,jdbcType=CHAR}, #{height,jdbcType=VARCHAR}, #{birthday,jdbcType=TIMESTAMP}, 
-      #{common,jdbcType=VARCHAR}, #{reserve1,jdbcType=VARCHAR}, #{reserve2,jdbcType=VARCHAR}, 
-      #{reserve3,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.zhouzz.pojo.Student" >
-    insert into STUDENT
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        ID,
-      </if>
-      <if test="name != null" >
-        NAME,
-      </if>
-      <if test="age != null" >
-        AGE,
-      </if>
-      <if test="sex != null" >
-        SEX,
-      </if>
-      <if test="height != null" >
-        HEIGHT,
-      </if>
-      <if test="birthday != null" >
-        BIRTHDAY,
-      </if>
-      <if test="common != null" >
-        COMMON,
-      </if>
-      <if test="reserve1 != null" >
-        RESERVE1,
-      </if>
-      <if test="reserve2 != null" >
-        RESERVE2,
-      </if>
-      <if test="reserve3 != null" >
-        RESERVE3,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=NUMERIC},
-      </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="age != null" >
-        #{age,jdbcType=VARCHAR},
-      </if>
-      <if test="sex != null" >
-        #{sex,jdbcType=CHAR},
-      </if>
-      <if test="height != null" >
-        #{height,jdbcType=VARCHAR},
-      </if>
-      <if test="birthday != null" >
-        #{birthday,jdbcType=TIMESTAMP},
-      </if>
-      <if test="common != null" >
-        #{common,jdbcType=VARCHAR},
-      </if>
-      <if test="reserve1 != null" >
-        #{reserve1,jdbcType=VARCHAR},
-      </if>
-      <if test="reserve2 != null" >
-        #{reserve2,jdbcType=VARCHAR},
-      </if>
-      <if test="reserve3 != null" >
-        #{reserve3,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.zhouzz.pojo.StudentExample" resultType="java.lang.Integer" >
-    select count(*) from STUDENT
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map" >
-    update STUDENT
-    <set >
-      <if test="record.id != null" >
-        ID = #{record.id,jdbcType=NUMERIC},
-      </if>
-      <if test="record.name != null" >
-        NAME = #{record.name,jdbcType=VARCHAR},
-      </if>
-      <if test="record.age != null" >
-        AGE = #{record.age,jdbcType=VARCHAR},
-      </if>
-      <if test="record.sex != null" >
-        SEX = #{record.sex,jdbcType=CHAR},
-      </if>
-      <if test="record.height != null" >
-        HEIGHT = #{record.height,jdbcType=VARCHAR},
-      </if>
-      <if test="record.birthday != null" >
-        BIRTHDAY = #{record.birthday,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.common != null" >
-        COMMON = #{record.common,jdbcType=VARCHAR},
-      </if>
-      <if test="record.reserve1 != null" >
-        RESERVE1 = #{record.reserve1,jdbcType=VARCHAR},
-      </if>
-      <if test="record.reserve2 != null" >
-        RESERVE2 = #{record.reserve2,jdbcType=VARCHAR},
-      </if>
-      <if test="record.reserve3 != null" >
-        RESERVE3 = #{record.reserve3,jdbcType=VARCHAR},
-      </if>
-    </set>
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map" >
-    update STUDENT
-    set ID = #{record.id,jdbcType=NUMERIC},
-      NAME = #{record.name,jdbcType=VARCHAR},
-      AGE = #{record.age,jdbcType=VARCHAR},
-      SEX = #{record.sex,jdbcType=CHAR},
-      HEIGHT = #{record.height,jdbcType=VARCHAR},
-      BIRTHDAY = #{record.birthday,jdbcType=TIMESTAMP},
-      COMMON = #{record.common,jdbcType=VARCHAR},
-      RESERVE1 = #{record.reserve1,jdbcType=VARCHAR},
-      RESERVE2 = #{record.reserve2,jdbcType=VARCHAR},
-      RESERVE3 = #{record.reserve3,jdbcType=VARCHAR}
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
+        <include refid="Base_Column_List"/>
+        from STUDENT
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <delete id="deleteByExample" parameterType="com.zhouzz.pojo.StudentExample">
+        delete from STUDENT
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.zhouzz.pojo.Student">
+        insert into STUDENT (ID, NAME, AGE,
+                             SEX, HEIGHT, BIRTHDAY,
+                             COMMON, RESERVE1, RESERVE2,
+                             RESERVE3)
+        values (#{id,jdbcType=NUMERIC}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR},
+                #{sex,jdbcType=CHAR}, #{height,jdbcType=VARCHAR}, #{birthday,jdbcType=TIMESTAMP},
+                #{common,jdbcType=VARCHAR}, #{reserve1,jdbcType=VARCHAR}, #{reserve2,jdbcType=VARCHAR},
+                #{reserve3,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.zhouzz.pojo.Student">
+        insert into STUDENT
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="name != null">
+                NAME,
+            </if>
+            <if test="age != null">
+                AGE,
+            </if>
+            <if test="sex != null">
+                SEX,
+            </if>
+            <if test="height != null">
+                HEIGHT,
+            </if>
+            <if test="birthday != null">
+                BIRTHDAY,
+            </if>
+            <if test="common != null">
+                COMMON,
+            </if>
+            <if test="reserve1 != null">
+                RESERVE1,
+            </if>
+            <if test="reserve2 != null">
+                RESERVE2,
+            </if>
+            <if test="reserve3 != null">
+                RESERVE3,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=NUMERIC},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="age != null">
+                #{age,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=CHAR},
+            </if>
+            <if test="height != null">
+                #{height,jdbcType=VARCHAR},
+            </if>
+            <if test="birthday != null">
+                #{birthday,jdbcType=TIMESTAMP},
+            </if>
+            <if test="common != null">
+                #{common,jdbcType=VARCHAR},
+            </if>
+            <if test="reserve1 != null">
+                #{reserve1,jdbcType=VARCHAR},
+            </if>
+            <if test="reserve2 != null">
+                #{reserve2,jdbcType=VARCHAR},
+            </if>
+            <if test="reserve3 != null">
+                #{reserve3,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
 
-  <!--一次性传输list集合参数，批量查询学生id-->
-  <select id="batchGetStudentIds" parameterType="java.util.List" resultType="java.lang.String">
-    SELECT id
-    FROM student
-    WHERE
-    <if test="list != null and list.size() > 0">
-      <if test="list[0].name != null">
-        name IN
-        <foreach collection="list" item="student" open="(" separator="," close=")">
-          #{student.name}
+    <select id="countByExample" parameterType="com.zhouzz.pojo.StudentExample" resultType="java.lang.Integer">
+        select count(*) from STUDENT
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update STUDENT
+        <set>
+            <if test="record.id != null">
+                ID = #{record.id,jdbcType=NUMERIC},
+            </if>
+            <if test="record.name != null">
+                NAME = #{record.name,jdbcType=VARCHAR},
+            </if>
+            <if test="record.age != null">
+                AGE = #{record.age,jdbcType=VARCHAR},
+            </if>
+            <if test="record.sex != null">
+                SEX = #{record.sex,jdbcType=CHAR},
+            </if>
+            <if test="record.height != null">
+                HEIGHT = #{record.height,jdbcType=VARCHAR},
+            </if>
+            <if test="record.birthday != null">
+                BIRTHDAY = #{record.birthday,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.common != null">
+                COMMON = #{record.common,jdbcType=VARCHAR},
+            </if>
+            <if test="record.reserve1 != null">
+                RESERVE1 = #{record.reserve1,jdbcType=VARCHAR},
+            </if>
+            <if test="record.reserve2 != null">
+                RESERVE2 = #{record.reserve2,jdbcType=VARCHAR},
+            </if>
+            <if test="record.reserve3 != null">
+                RESERVE3 = #{record.reserve3,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update STUDENT
+        set ID = #{record.id,jdbcType=NUMERIC},
+        NAME = #{record.name,jdbcType=VARCHAR},
+        AGE = #{record.age,jdbcType=VARCHAR},
+        SEX = #{record.sex,jdbcType=CHAR},
+        HEIGHT = #{record.height,jdbcType=VARCHAR},
+        BIRTHDAY = #{record.birthday,jdbcType=TIMESTAMP},
+        COMMON = #{record.common,jdbcType=VARCHAR},
+        RESERVE1 = #{record.reserve1,jdbcType=VARCHAR},
+        RESERVE2 = #{record.reserve2,jdbcType=VARCHAR},
+        RESERVE3 = #{record.reserve3,jdbcType=VARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+
+    <!--一次性传输list集合参数，批量查询学生id-->
+    <select id="batchGetStudentIds" parameterType="java.util.List" resultType="java.lang.String">
+        SELECT id
+        FROM student
+        WHERE
+        <if test="list != null and list.size() > 0">
+            <if test="list[0].name != null">
+                name IN
+                <foreach collection="list" item="student" open="(" separator="," close=")">
+                    #{student.name}
+                </foreach>
+            </if>
+            <if test="list[0].age != null">
+                AND age IN
+                <foreach collection="list" item="student" open="(" separator="," close=")">
+                    #{student.age}
+                </foreach>
+            </if>
+            <if test="list[0].sex != null">
+                AND sex IN
+                <foreach collection="list" item="student" open="(" separator="," close=")">
+                    #{student.sex}
+                </foreach>
+            </if>
+        </if>
+    </select>
+    <select id="querySourceDataStudent" resultType="com.zhouzz.pojo.Student" >
+        SELECT id,
+               name,
+               age,
+               sex,
+               height,
+               birthday,
+               common,
+               reserve1,
+               reserve2,
+               reserve3
+        FROM student_bak  order by id
+
+    </select>
+  <insert id="batchInsert" parameterType="java.util.List">
+    <![CDATA[
+    INSERT INTO STUDENT (id, name, age, sex, height, birthday, common, reserve1, reserve2, reserve3)
+    VALUES
+      <foreach collection="list" item="student" separator=",">
+      (#{student.id},
+      #{student.name},
+      #{student.age},
+      #{student.sex},
+      #{student.height},
+      #{student.birthday, jdbcType=TIMESTAMP},
+      #{student.common, jdbcType=VARCHAR},
+      #{student.reserve1, jdbcType=VARCHAR},
+      #{student.reserve2, jdbcType=VARCHAR},
+      #{student.reserve3, jdbcType=VARCHAR})
+    </foreach>
+    ]]>
+</insert>
+
+  <insert id="batchInsertStudents" parameterType="java.util.List">
+    <!-- 使用choose/when/otherwise处理不同情况 -->
+    <choose>
+      <when test="list == null or list.size == 0">
+        <!-- 空集合时不执行任何操作，返回成功 -->
+        SELECT 1 FROM DUAL WHERE 1=2
+      </when>
+      <when test="list.size == 1">
+        <!-- 单条数据直接插入 -->
+        INSERT INTO STUDENT (
+        id, name, age, sex, height, birthday,
+        common, reserve1, reserve2, reserve3
+        )
+        VALUES (
+        #{list[0].id,jdbcType=NUMERIC},
+        #{list[0].name,jdbcType=VARCHAR},
+        #{list[0].age,jdbcType=VARCHAR},
+        #{list[0].sex,jdbcType=VARCHAR},
+        #{list[0].height,jdbcType=VARCHAR},
+        #{list[0].birthday,jdbcType=DATE},
+        #{list[0].common,jdbcType=VARCHAR},
+        #{list[0].reserve1,jdbcType=VARCHAR},
+        #{list[0].reserve2,jdbcType=VARCHAR},
+        #{list[0].reserve3,jdbcType=VARCHAR}
+        )
+      </when>
+      <otherwise>
+        <!-- 多条数据使用UNION ALL -->
+        INSERT INTO STUDENT (
+        id, name, age, sex, height, birthday,
+        common, reserve1, reserve2, reserve3
+        )
+        SELECT A.* FROM (
+        <foreach collection="list" item="item" separator="UNION ALL">
+          SELECT
+          #{item.id,jdbcType=NUMERIC} as id,
+          #{item.name,jdbcType=VARCHAR} as name,
+          #{item.age,jdbcType=VARCHAR} as age,
+          #{item.sex,jdbcType=VARCHAR} as sex,
+          #{item.height,jdbcType=VARCHAR} as height,
+          #{item.birthday,jdbcType=DATE} as birthday,
+          #{item.common,jdbcType=VARCHAR} as common,
+          #{item.reserve1,jdbcType=VARCHAR} as reserve1,
+          #{item.reserve2,jdbcType=VARCHAR} as reserve2,
+          #{item.reserve3,jdbcType=VARCHAR} as reserve3
+          FROM DUAL
         </foreach>
-      </if>
-      <if test="list[0].age != null">
-        AND age IN
-        <foreach collection="list" item="student" open="(" separator="," close=")">
-          #{student.age}
-        </foreach>
-      </if>
-      <if test="list[0].sex != null">
-        AND sex IN
-        <foreach collection="list" item="student" open="(" separator="," close=")">
-          #{student.sex}
-        </foreach>
-      </if>
-    </if>
-  </select>
+        ) A
+      </otherwise>
+    </choose>
+  </insert>
 
 </mapper>
