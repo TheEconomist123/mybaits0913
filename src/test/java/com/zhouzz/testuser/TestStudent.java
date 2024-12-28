@@ -24,8 +24,8 @@ import java.util.List;
 
 @Slf4j
 public class TestStudent extends BaseTest {
-
-    private static final int BATCH_SIZE = 3000;
+    //批量处理的大小
+    private static final int BATCH_SIZE = 1000;
 
     /**
      * 数据迁移方法
